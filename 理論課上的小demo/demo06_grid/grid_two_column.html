@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/demo06_grid/grid01.html">
+    <title>互動網頁設計</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    /* 我要做出兩欄的效果 */
+    .container{
+        background-color: #ffffff;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 兩欄布局，每一欄寬度為 1fr，代表可用空間的分配 */
+        gap: 1rem;
+    }
+    .item{
+        background-color: cyan;
+        padding: 1rem;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+    </div>    
+</body>
+</html>
+

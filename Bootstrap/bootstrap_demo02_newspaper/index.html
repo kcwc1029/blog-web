@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bootstrap demo</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC:wght@300;400;700&display=swap");
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            /*  */
+            font-family: "LXGW WenKai TC", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+    <body>
+        <!-- TODO: top -->
+        <section class="top">
+            <div class="container d-flex justify-content-evenly align-items-center p-2">
+                <div class=""><a href="#" class="link-secondary fs-4">左上角</a></div>
+                <div class=""><a href="#" class="link-secondary fs-2">吉伊卡哇 感知學習與人機合作實驗室</a></div>
+                <div class=""><button type="button" class="btn btn-outline-primary">Primary</button></div>
+            </div>
+        </section>
+
+        <!-- TODO: navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- TODO: home section -->
+        <div class="container-fluid bg-dark text-white p-5">
+            <h1 class="text-center display-1 m-3">國立成功大學</h1>
+            <p class="text-center fs-4">
+                還不認識「吉伊卡哇」可說是真落伍！這個2020年開始連載的動漫，已經是時下最夯IP霸主。他們到底在紅什麼？角色種族及魅力何在，現在一次介紹給你。
+            </p>
+            <a href="#" class="link-light fs-3">continue reading...</a>
+        </div>
+
+        <!-- TODO: Card -->
+        <section class="card">
+            <div class="container">
+                <div class="row p-3">
+                    <div class="col-12 col-lg-6">
+                        <div class="card mb-3" style="max-width: 540px">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./img/card01.jpg" class="img-fluid rounded-start" alt="..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="text-primary">
+                                            標籤分類
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </h5>
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            This is a wider card with supporting text below as a natural lead-in to
+                                            additional content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card mb-3" style="max-width: 540px">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./img/card02.jpg" class="img-fluid rounded-start" alt="..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="text-primary">
+                                            標籤分類
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </h5>
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            This is a wider card with supporting text below as a natural lead-in to
+                                            additional content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- TODO: Sample blog post -->
+        <section class="Sample_blog_post">
+            <div class="container">
+                <div class="row d-flex justify-content-evenly">
+                    <div class="col-lg-7">
+                        <h1 class="mt-3">這是標題</h1>
+                        <img
+                            src="https://im.marieclaire.com.tw/s1200c675h100b0webp100/assets/mc/202408/66CC69718F3901724672369.png"
+                            class="img-fluid"
+                            alt="..."
+                        />
+                        <p class="fs-5">
+                            日本爆紅的吉伊卡哇（ちいかわ／Chiikawa），帶著獨特魅力在近幾年席捲全球，鄰近的中國、台灣、韓國都深陷吉伊卡哇風潮！無論是動漫收看率、周邊商品、限定快閃店等，出動代購大排長龍已不足為奇，盜版滿天飛到甚至缺貨，說明吉伊卡哇是近年最夯人氣IP角色王者！
+                        </p>
+                        <h1 class="mt-3">這是標題</h1>
+                        <img
+                            src="https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202408/66CC6823155E01724672035.jpeg"
+                            class="img-fluid"
+                            alt="..."
+                        />
+                        <p class="fs-5">
+                            《吉伊卡哇》是由日本漫畫家ナガノ（Nagano）所創作的作品，最初是在ナガノ的Twitter帳號上以「希望變成這樣的樣子」而創作出一個二頭身動物角色。而這部作品的副標題為「這又小又可愛的傢伙」，原由是「吉伊卡哇」（ちいかわ）是由「小小的」（小さい,
+                            chiisai）、『可愛的」（可愛い,
+                            kawaii）兩個字所組成，也因此「吉伊卡哇」便是「又小又可愛」的化身，角色們的種族被定義為「小可愛族」，它們又萌又療癒的表情和動作，真的很難不融化！
+                        </p>
+                        <h1 class="mt-3">吉伊卡哇角色有哪些？各自有著鮮明個性</h1>
+                        <p class="fs-5">
+                            《吉伊卡哇》的主要角色群包含：吉伊卡哇（ちいかわ）、小八貓（ハチワレ）、兔兔烏薩奇（うさぎ）、小桃（モモンガ）、海獺勇者（ラッコ）、栗子饅頭前輩（栗まんじゅう先輩）、風獅（シーサー）、拉麵盔甲人（ラーメンの鎧さん）、手工盔甲人（ポシェットの鎧さん）、勞動盔甲人（労働の鎧さん）所組成。
+                        </p>
+                        <p class="fs-5">
+                            吉伊卡哇的個性脆弱、溫柔，非常愛哭，但卻很關心朋友；小八貓開朗、樂觀，是唯一能正常說出台詞的角色，常擔任大家的「翻譯官」，協助劇情推進；兔兔活潑好動，有點瘋瘋癲癲，但勇者無懼的精神也默默影響個性怯弱的吉伊卡哇。故事透過日常生活中三人相互幫助並成長的故事線，帶領大家了解吉伊卡哇的世界觀。但如此平淡又烏托邦的劇情，吸引人之處究竟在哪裡？這時候就不得不提到劇情中所藴涵的種種深意。
+                        </p>
+                        <h1 class="mt-3">反映現實社會縮影的世界觀</h1>
+                        <img
+                            src="https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202408/66CC6604BC5151724671492.jpeg"
+                            class="img-fluid"
+                            alt="..."
+                        />
+                        <p class="fs-5">
+                            在吉伊卡哇的世界裡，可不只是靠賣萌、耍可愛就能生存，小可愛族必須透過勞務賺取報酬才能糊口，想要提高自己的社會階級，還得考各式各樣的證照，更得為了賺錢，不顧生命危險去討伐怪物，而這一切都是因為生活在鎧甲人的管理之下卻不自知。
+                        </p>
+                        <h1 class="mt-3">這是標題</h1>
+                        <p class="fs-5">
+                            《吉伊卡哇》透過簡單的動畫反映現實社會中人們為生計奔波的現狀、為了地位就得努力精進自己的過程。角色們所居住的房子，也反映該世界中的貧富差距與現實無異。作品中還棲息著許多怪物「奇美拉」三不五時威脅著小可愛族的生命，小可愛族也必須征戰討伐，但隨著更多劇情推進，越來越多人猜測怪物奇美拉可能是由小可愛族不得已變身，此點也讓讀者深陷道德與人性的反思。
+                        </p>
+                        <h1 class="mt-3">作者ナガノ還有另一個超紅的角色IP</h1>
+                        <p class="fs-5">
+                            大家認識作者ナガノ絕大多是因為《吉伊卡哇》，但其實在《吉伊卡哇》
+                            之前，ナガノ另一個重要創作就是《自嘲熊》（吐嘲的白熊／Joke
+                            Bear／ナガノのくま）。對台灣人來說，最紅的應該就是它推出的一系列LINE貼圖，當時火紅的程度之於吉伊卡哇來說可謂並駕齊驅。只可惜此角色IP的版權曾意外被他人註冊走，而導致作者自己有一段時間不能畫屬於自己的創作，才轉而創作《吉伊卡哇》。幸好塞翁失馬焉得非福，吉伊卡哇意外的誕生，讓作者ナガノ再創人生高峰！
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="bg-light p-4">
+                            <h1>右邊標題</h1>
+                            <p>
+                                小至扭蛋，大至抱枕，生活中吃的、喝的、用的、穿的，放眼望去全東京都有吉伊卡哇的身影，每個人身上似也都有一個相關配件，這兩年日本彷彿利用吉伊卡哇做國民外交，讓全球人士都誠服於它們的可愛魅力下。你還不能理解吉伊卡哇所刮起的炫風嗎？透過9件事讓你從此愛上它，唯一要擔心的是從此荷包可能不保！
+                            </p>
+                        </div>
+                        <div class="p-4">
+                            <h1 class="mt-3">期中考</h1>
+                            <ul class="list-unstyled text-primary">
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.11.25</a></li>
+                                <li><a href="#">2024.12.25</a></li>
+                                <li><a href="#">2024.13.25</a></li>
+                                <li><a href="#">2024.14.25</a></li>
+                                <li><a href="#">2024.15.25</a></li>
+                                <li><a href="#">2024.16.25</a></li>
+                            </ul>
+                        </div>
+                        <div class="p-4">
+                            <h1 class="mt-3">期末考</h1>
+                            <ul class="list-unstyled text-primary">
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                                <li><a href="#">2024.10.25</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- TODO: footer -->
+        <footer>
+            <div class="container-fluid bg-secondary-subtle px-5 py-3">
+                <div class="row">
+                    <div class="col-12 text-center fs-4">&copy; 感知學習與人機合作實驗室 2024.10.24</div>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

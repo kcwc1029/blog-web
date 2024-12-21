@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event_Modifier_Enter</title>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" @keyup.enter="confirmInput" v-model="name" placeholder="按下Enter送出" />
+            <p>輸入內容: {{ confirmName }}</p>
+        </div>
+    </body>
+    <script>
+        const { createApp, ref } = Vue;
+        createApp({
+            setup() {
+                const name = ref("");
+                const confirmName = ref("");
+                const confirmInput = () => {
+                    confirmName.value = name.value; // 正確的更新方式
+                };
+                return { confirmInput, name, confirmName };
+            },
+        }).mount("#app");
+    </script>
+</html>

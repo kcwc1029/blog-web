@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Guess My Number!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Guess Number~~~</h1>
+            <p class="between">猜的數值介於1-20之間</p>
+            <button class="btn again">again</button>
+            <div class="number">你猜呀~</div>
+        </header>
+        <main>
+            <section class="left">
+                <input type="number" class="guess" />
+                <button class="btn check">確定</button>
+            </section>
+            <section class="right">
+                <p class="message">Start guessing...</p>
+                <p class="label-score">💯 分數: <span class="score">20</span></p>
+                <p class="label-highscore">🥇 最高紀錄: <span class="highscore">0</span></p>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bootstrap demo</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC:wght@300;400;700&display=swap");
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            /*  */
+            font-family: "LXGW WenKai TC", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .carousel-inner img {
+            max-height: 500px; /* 設定您希望的最大高度 */
+            width: 100%; /* 確保圖片寬度適應容器 */
+            object-fit: cover; /* 保持圖片比例並裁剪多餘部分 */
+        }
+        .bg-dark-transparent {
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+        }
+        .ready {
+            position: relative; /* 為偽元素設置相對定位 */
+            background-image: url("./img/bg_image01.jpg"); 
+            background-size: cover; /*背景圖片比例*/
+            background-attachment: fixed; /* 視差滾動的效果 */
+            background-position: center; /* 設定背景圖片的位置 */
+            color: white; /* 設置文字顏色以在黑色背景上顯示 */
+        }
+
+        .ready::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 黑色濾鏡，透明度可調整 */
+            z-index: 1; /* 保證濾鏡在背景之上 */
+        }
+        .ready {
+            h1,
+            p,
+            button {
+                position: relative;
+                z-index: 2; /* 確保文字在濾鏡之上顯示 */
+            }
+        }
+    </style>
+    <body>
+        <!-- TODO: navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">XXXXXXXXX實驗室</a>
+				
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+				
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-3 mb-lg-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active border-start border-4 border-dark-subtle"
+                                aria-current="page"
+                                href="#"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link01</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link02</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link03</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+
+        <!-- TODO: carousel  -->
+        <section class="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4"
+                    ></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/carousel01.jpg" class="d-block w-100" alt="..." />
+                        <div
+                            class="carousel-caption d-md-block bg-dark-transparent text-start ps-5 position-absolute start-0 end-0"
+                        >
+                            <h5 class="display-4">First slide label</h5>
+                            <p class="fs-3">Some representative placeholder content for the first slide.</p>
+                            <a href="#" class="btn btn-primary fs-3">click me</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/carousel02.jpg" class="d-block w-100" alt="..." />
+                        <div
+                            class="carousel-caption d-md-block bg-dark-transparent text-start ps-5 position-absolute start-0 end-0"
+                        >
+                            <h5 class="display-4">First slide label</h5>
+                            <p class="fs-3">Some representative placeholder content for the first slide.</p>
+                            <a href="#" class="btn btn-primary fs-3">click me</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/carousel03.jpg" class="d-block w-100" alt="..." />
+                        <div
+                            class="carousel-caption d-md-block bg-dark-transparent text-start ps-5 position-absolute start-0 end-0"
+                        >
+                            <h5 class="display-4">First slide label</h5>
+                            <p class="fs-3">Some representative placeholder content for the first slide.</p>
+                            <a href="#" class="btn btn-primary fs-3">click me</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/carousel04.jpg" class="d-block w-100" alt="..." />
+                        <div
+                            class="carousel-caption d-md-block bg-dark-transparent text-start ps-5 position-absolute start-0 end-0"
+                        >
+                            <h5 class="display-4">First slide label</h5>
+                            <p class="fs-3">Some representative placeholder content for the first slide.</p>
+                            <a href="#" class="btn btn-primary fs-3">click me</a>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- TODO: features  -->
+        <section class="features">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 text-center m-3">
+                        <!-- discord icon -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="70"
+                            height="70"
+                            fill="currentColor"
+                            class="bi bi-discord"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                            />
+                        </svg>
+                        <h1 class="text-capitalize">discord</h1>
+                        <p class="fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                    <div class="col-lg-3 text-center m-3">
+                        <!-- discord icon -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="70"
+                            height="70"
+                            fill="currentColor"
+                            class="bi bi-threads"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"
+                            />
+                        </svg>
+                        <h1 class="text-capitalize">threads</h1>
+                        <p class="fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                    <div class="col-lg-3 text-center m-3">
+                        <!-- discord icon -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="70"
+                            height="70"
+                            fill="currentColor"
+                            class="bi bi-github"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                            />
+                        </svg>
+                        <h1 class="text-capitalize">github</h1>
+                        <p class="fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TODO: ready -->
+        <section class="ready p-5 d-flex flex-column align-items-center">
+            <h1 class="display-3">歡迎加入實驗室!!!</h1>
+            <p class="fs-3 text-center w-75">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint provident eius laudantium illo nostrum
+                quod eaque aspernatur atque pariatur magni.
+            </p>
+            <!-- TODO: Modal => button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+            <!-- TODO: Modal => display -->
+            <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">...</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TODO: about -->
+        <section class="about">
+            <div class="contanier p-2">
+                <h1 class="display-3 text-center m-3">老師資訊</h1>
+                <div class="row">
+                    <div class="col-7 d-flex align-items-center">
+                        <p class="fs-3 text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sequi nisi explicabo neque
+                            expedita ab magni et natus, quisquam reprehenderit porro inventore. Ipsa, dignissimos
+                            repellendus animi ab amet est? Explicabo?
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <img src="./img/teacher01.jpg" class="img-fluid" alt="..." style="width: auto; height: 30rem" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TODO: footer -->
+        <footer>
+            <div class="container-fluid bg-secondary-subtle px-5 py-3">
+                <div class="row">
+                    <div class="col-12 text-center fs-4">&copy; XXXXXXXXX實驗室 2024.10.26</div>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

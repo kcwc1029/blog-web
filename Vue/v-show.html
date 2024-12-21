@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue 3 v-show</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app" class="d-flex justify-content-center flex-column">
+            <!-- 使用 v-show 顯示/隱藏 -->
+            <h1 v-show="toggle" class="m-4 bg-primary text-white text-center rounded shadow">Hello, Vue.js!</h1>
+            <button @click="toggle=!toggle" class="m-4 btn btn-danger">切換顯示</button>
+        </div>
+    </body>
+    <script>
+        const { createApp, ref } = Vue;
+        createApp({
+            setup() {
+                const toggle = ref(true);
+                return { toggle };
+            },
+        }).mount("#app");
+    </script>
+</html>

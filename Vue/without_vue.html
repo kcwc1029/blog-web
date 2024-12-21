@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>without_vue</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+            }
+            #app {
+                margin: 3rem auto;
+                max-width: 40rem;
+                padding: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+            }
+            label,
+            input {
+                margin-bottom: 0.5rem;
+                display: block;
+                width: 100%;
+            }
+            label {
+                font-weight: bold;
+            }
+            ul {
+                list-style: none;
+                margin: 1rem 0;
+                padding: 0;
+            }
+            li {
+                margin: 1rem 0;
+                padding: 1rem;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <label for="goal">吵架清單</label>
+                <input type="text" id="goal" />
+                <button>增加項目</button>
+            </div>
+            <ul>
+                <li>尿尿不洗手</li>
+                <li>抽菸bad</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        let buttonEl = document.querySelector("button");
+        let inputEl = document.querySelector("input");
+        let ulEl = document.querySelector("ul");
+        // 排查元素選取問題
+        console.log(buttonEl, inputEl, ulEl);
+        buttonEl.addEventListener("click", () => {
+            let enteredValue = inputEl.value;
+            // 檢查是否有輸入值
+            if (enteredValue.trim() !== "") {
+                // 建立新的li元素
+                let newLi = document.createElement("li");
+                newLi.textContent = enteredValue;
+                // 將新的li元素添加到ul中
+                ulEl.appendChild(newLi);
+                // 清空輸入欄
+                inputEl.value = "";
+            }
+        });
+    </script>
+</html>

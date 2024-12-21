@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>A First App</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+            }
+            #app {
+                margin: 3rem auto;
+                max-width: 40rem;
+                padding: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+            }
+            label,
+            input {
+                margin-bottom: 0.5rem;
+                display: block;
+                width: 100%;
+            }
+            label {
+                font-weight: bold;
+            }
+            ul {
+                list-style: none;
+                margin: 1rem 0;
+                padding: 0;
+            }
+            li {
+                margin: 1rem 0;
+                padding: 1rem;
+                border: 1px solid #ccc;
+            }
+        </style>
+        <!-- VUE CDN -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <label for="goal">吵架清單</label>
+                <input type="text" id="goal" v-model="enteredValue" />
+                <button v-on:click="addGoal">增加項目</button>
+            </div>
+            <ul>
+                <li>尿尿不洗手</li>
+                <li>抽菸bad</li>
+                <li v-for="goal in goals">{{ goal }}</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                // 使用 ref 定義響應式數據
+                const goals = ref([]);
+                const enteredValue = ref("");
+
+                // 方法
+                const addGoal = () => {
+                    if (enteredValue.value.trim() !== "") {
+                        goals.value.push(enteredValue.value);
+                        enteredValue.value = ""; // 清空輸入框
+                    }
+                };
+                return { goals, enteredValue, addGoal };
+            },
+        }).mount("#app");
+    </script>
+</html>

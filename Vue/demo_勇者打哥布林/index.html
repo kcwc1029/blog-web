@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>勇者打哥布林</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .healthbar {
+                background-color: #fde5e5;
+                border: 1px solid #575757;
+                height: 40px;
+                margin: 1rem 0;
+            }
+            .healthbar__value {
+                background-color: #00a876;
+                height: 100%;
+                width: 100%;
+            }
+            .log--player {
+                color: #7700ff;
+            }
+            .log--monster {
+                color: #da8d00;
+            }
+            .log--damage {
+                color: red;
+            }
+            .log--heal {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="bg-danger text-white text-center py-3 shadow-sm mb-4">
+            <h1>勇者打哥布林</h1>
+        </header>
+        <div id="game" class="container text-center">
+            <section id="monster" class="my-4 p-3 rounded shadow">
+                <h2>哥布林</h2>
+                <div class="healthbar">
+                    <div class="healthbar__value" :style="monsterBarStyle"></div>
+                </div>
+            </section>
+            <section id="player" class="my-4 p-3 rounded shadow">
+                <h2>勇者</h2>
+                <div class="healthbar">
+                    <div class="healthbar__value" :style="playerBarStyle"></div>
+                </div>
+            </section>
+            <section id="controls" class="d-flex flex-nowrap justify-content-center gap-3 my-4">
+                <button class="btn btn-danger px-4" @click="attackMonster()">ATTACK</button>
+                <button class="btn btn-danger px-4" @click="specialattackMonster()" :disabled="useSpecialAttck()">SPECIAL ATTACK</button>
+                <button class="btn btn-success px-4" @click="healPlayer()">HEAL</button>
+                <button class="btn btn-secondary px-4" @click="startNewGame()">START NEW GAME</button>
+                <!-- <button class="btn btn-secondary px-4">SURRENDER</button> -->
+            </section>
+            <!-- TODO: 戰鬥結果 -->
+            <section v-if="display_winner"><h2>{{winner}}</h2></section>
+            <section id="log" class="my-4 p-3 rounded shadow">
+                <h2>戰鬥紀錄</h2>
+                <ul class="list-unstyled">
+                    <li v-for="(item, index) in logMsg" :key="index">{{item}}</li>
+                </ul>
+            </section>
+        </div>
+        <script>
+            const getRandomValue = (min, max) => {
+                return Math.floor(Math.random() * (max - min)) + min;
+            };
+
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        playerHealth: 100,
+                        monsterHealth: 100,
+                        currentRound: 0, // 目前回合數\
+                        display_winner: false,
+                        winner: null,
+                        logMsg: [],
+                    };
+                },
+                computed: {
+                    monsterBarStyle() {
+                        return { width: this.monsterHealth + "%" };
+                    },
+                    playerBarStyle() {
+                        return { width: this.playerHealth + "%" };
+                    },
+                },
+                watch: {
+                    playerHealth(value) {
+                        if (value <= 0 && this.monsterHealth <= 0) {
+                            // 平手
+                            this.display_winner = true;
+                            this.winner = "平手";
+                        } else if (value <= 0) {
+                            // 怪物贏
+                            this.display_winner = true;
+                            this.winner = "怪物贏";
+                        }
+                    },
+                    monsterHealth(value) {
+                        if (value <= 0 && this.playerHealth <= 0) {
+                            // 平手
+                            this.display_winner = true;
+                            this.winner = "平手";
+                        } else if (value <= 0) {
+                            // 玩家贏
+                            this.display_winner = true;
+                            this.winner = "玩家贏";
+                        }
+                    },
+                },
+                methods: {
+                    // TODO: ATTACK
+                    attackMonster() {
+                        this.currentRound++;
+                        let attackValue = Math.floor(Math.random() * (12 - 5)) + 5;
+                        this.monsterHealth -= attackValue;
+                        this.attackPlayer(); // 攻擊完怪獸之後，怪獸一定會馬上反擊，因此呼叫attackPlayer()
+                        this.addLogMsg("Monster", "attacked", attackValue);
+                    },
+                    attackPlayer() {
+                        let attackValue = Math.floor(Math.random() * (15 - 8)) + 8;
+                        this.playerHealth -= attackValue;
+                        this.addLogMsg("player", "attacked", attackValue);
+                    },
+                    useSpecialAttck() {
+                        return this.currentRound % 3 !== 0 || this.currentRound === 0;
+                    },
+
+                    // TODO: SPECIAL ATTACK -> 對monster的傷害稍微多一點
+                    specialattackMonster() {
+                        this.currentRound++;
+                        let attackValue = Math.floor(Math.random() * (25 - 10)) + 10;
+                        this.monsterHealth -= attackValue;
+                        this.attackPlayer(); // 攻擊完怪獸之後，怪獸一定會馬上反擊，因此呼叫attackPlayer()
+                        this.addLogMsg("Monster", "attacked", attackValue);
+                    },
+
+                    // TODO: HEAL
+                    healPlayer() {
+                        let healValue = Math.floor(Math.random() * (5 - 1)) + 1;
+                        if (this.playerHealth + healValue > 100) this.playerHealth = 100;
+                        else this.playerHealth += healValue;
+                        this.addLogMsg("player", "heal", healValue);
+                    },
+
+                    startNewGame() {
+                        this.playerHealth = 100;
+                        this.monsterHealth = 100;
+                        this.currentRound = 0; // 目前回合數\
+                        this.display_winner = false;
+                        this.winner = null;
+                        this.logMsg = [];
+                    },
+
+                    addLogMsg(who, what, value) {
+                        let s = `${who} - ${what} - ${value}`;
+                        this.logMsg.unshift(s);
+                        console.log(this.logMsg);
+                    },
+                },
+            });
+            app.mount("#game");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>method_Calculate_BMI</title>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>身高(cm): {{ height }}</p>
+            <p>體重(kg): {{ weight }}</p>
+            <p>BMI: {{ calculateBMI() }}</p>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                // 響應式資料
+                const height = ref(176);
+                const weight = ref(62);
+
+                // 計算屬性
+                const BMI = computed(() => {
+                    return (weight.value / (height.value / 100) ** 2).toFixed(2);
+                });
+
+                return {
+                    height,
+                    weight,
+                    calculateBMI,
+                };
+            },
+        }).mount("#app");
+    </script>
+</html>
