@@ -587,65 +587,90 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 ![upgit_20241221_1734790834.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241221_1734790834.png)
 
-## 32. vue router
+### 31.1. 兩種歷史模式
 
-### 32.1. 實現 nav 之間切換
+-   呼叫 createRouter 建立 router 的時候,需要在 history 屬性指定歷史模式。
+-   目前 Vue Router 4 上提供的歷史模式有兩種:Hash 模式和 HTML5 模式。
+    ![upgit_20241221_1734792336.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241221_1734792336.png)
 
-![upgit_20241115_1731659663.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731659663.png)
+-   差異：
+    ![upgit_20241221_1734792360.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241221_1734792360.png)
 
--   main.js - 這邊 createMemoryHistory 要改成 createWebHistory
-    ![upgit_20241115_1731659851.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731659851.png)
+#### 31.1.1. Hash 模式
 
--   App.vue
-    ![upgit_20241115_1731659871.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731659871.png)
+-   透過 `createWebHashHistory` 建立。
+-   路由中會有 `#` 符號，參數或 Query 都會放在 `#` 後。
+-   避免刷新時出現 `404 Not Found` 錯誤。
+-   符合 SPA 的需求，只有一份 `index.html` 作為入口。
+-   但 URL 中的 `#` 符號對 SEO 不友好，影響搜尋引擎排名。
 
--   TheNavigation.vue
-    ![upgit_20241115_1731659904.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731659904.png)
+#### 31.1.2. HTML5 模式 / History 模式(目前使用方式)
 
-### 32.2. 實現 button 做頁面切換
+-   透過 `createWebHistory` 建立。
+-   基於 HTML5 的 History API，操作瀏覽器的 `history` 物件（新增、修改、切換瀏覽記錄）。
+-   可以在不向後端發送請求的情況下改變頁面的 URL。
+-   URL 更加「順眼」，結構符合傳統網站。
+-   不會出現多餘的 `#` 符號，SEO 友好。
+-   需要伺服器配置支援，避免刷新時出現 `404 Not Found`。
+-   必須確保伺服器將所有路由指向 `index.html`。
 
-![upgit_20241115_1731660052.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731660052.png)
+## vue router
 
-### 32.3. 設定 linkActiveClass
+![upgit_20241222_1734852833.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734852833.png)
 
-![upgit_20241115_1731660568.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731660568.png)
+-   [vue-project-router-basic]("./vue-project-router-basic/src/main.js")
 
-## 33. Vue Router 中資料如何傳遞
+### nav-link
 
-### 33.1. 動態路由參數 (params)
+![upgit_20241222_1734853630.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734853630.png)
 
--   main.js - 動態路由參數通常用於需要在 URL 中嵌入動態資料的情境，例如 `/users/:userId`。
-    ![upgit_20241115_1731666206.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731666206.png)
+### 設定 nav-link 點選後的 CSS
 
-![upgit_20241115_1731666271.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731666271.png)
+-   在 NavPage.vue 做好 CSS
+-   在 main.js 中設定
 
-### 33.2. 使用 查詢參數 (query)
+![upgit_20241222_1734854853.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734854853.png)
 
--   查詢參數通常用於傳遞可選的、非必需的資料，格式為 /search?keyword=vue。
-    ![upgit_20241115_1731666562.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731666562.png)
+### 內部 button 去切換 router
 
-![upgit_20241115_1731666674.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731666674.png)
+![upgit_20241222_1734855608.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734855608.png)
 
-### 33.3. 獲補所有路徑
+### 重新導向&404 Not Found
 
--   main.js
-    ![upgit_20241115_1731667018.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731667018.png)
+![upgit_20241222_1734857721.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734857721.png)
 
-### 33.4. 使用命名視圖 (Named Views) 渲染多個路由
+## router 傳資料
 
-![upgit_20241115_1731668387.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731668387.png)
+### 路由參數(params)
 
--   App.vue
-    ![upgit_20241115_1731668442.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241115_1731668442.png)
+![upgit_20241222_1734859166.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734859166.png)
 
-## 34. Pinia
+![upgit_20241222_1734859174.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734859174.png)
 
--   **Pinia** 是一個輕量級且現代的狀態管理庫
+### 使用查詢參數 (query)
+
+![upgit_20241222_1734860232.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734860232.png)
+
+![upgit_20241222_1734860241.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734860241.png)
+
+### 將 param 視為 props
+
+![upgit_20241222_1734860857.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734860857.png)
+
+## Pinia
+
+-   Pinia 是一個輕量級且現代的狀態管理庫
 -   Pinia 是 Vue 團隊推薦的替代方案，因其擁有更簡單的 API、更好的開發體驗以及與 Vue 3 的更緊密整合。
+-   造成管理上的困擾的時候,就可以考慮使用狀態管理器。
+    -   當專案有多個元件,依賴同一個共用狀態。
+    -   當專案有多個元件的操作會改動到同一個狀態。
 
-```
-app.use(pinia)
-```
+### 安裝方式
+
+-   安裝套件`npm install pinia`
+-   在 main.js 引入
+
+![upgit_20241222_1734862747.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/12/upgit_20241222_1734862747.png)
 
 ### 34.1. 建立 pinia
 
@@ -658,32 +683,8 @@ app.use(pinia)
     -   跨組件共享狀態(例如：導航欄和設定頁面需要共用的用戶名稱)
     -   跨頁面保存狀態(例如：多步驟表單資料需要在頁面切換間保持)
 -   何時不需要 Store？ - 組件本地狀態(按鈕顯示/隱藏、彈出視窗開關) - 短暫存在的資料(通知提示、表單驗證訊息)
-    ![upgit_20241118_1731908867.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731908867.png)
 
-### 34.3. 使用 stroe 的資料
-
--   假設我要在 App.vue 使用(引入的是函數，所以要實例化)。
-    ![upgit_20241118_1731909117.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731909117.png)
-
-### 34.4. getter
-
--   就是 vue2 的 compute 這個屬性這樣。
--   主要用於計算衍生狀態（derived state），即從 `state` 中計算出新的資料，類似於 Vue 的計算屬性 (computed properties)。
--   具備快取功能 (caching)，只有當 state 發生變化時才會重新計算。
--   他有點類似 python 的 method。
-    ![upgit_20241118_1731924201.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731924201.png)
-
--   使用
-    ![upgit_20241118_1731924239.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731924239.png)
-
-### 34.5. Action
-
--   actions 是用來封裝邏輯和行為的函數。
--   相比於 getters，actions 更加靈活。
--   通常用於處理業務邏輯、修改 state、甚至執行異步操作(如 API 請求)。
-    ![upgit_20241118_1731929407.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731929407.png)
-
-![upgit_20241118_1731929585.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731929585.png)
+-   [vue-project-pinia]("./vue-project-pinia/src/main.js")
 
 ## 35. axios
 
@@ -693,24 +694,5 @@ app.use(pinia)
     -   自動解析 JSON：Axios 會自動將伺服器返回的 JSON 資料解析成物件。
     -   支援請求攔截器和回應攔截器：可以在請求發送或收到回應之前執行額外的邏輯。
     -   支援超時設置：可以為每個請求設置超時。
-
-```
-npm install axios
-```
-
-![upgit_20241118_1731932523.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731932523.png)
-
-![upgit_20241118_1731932579.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731932579.png)
-
-## 36. storeToRefs
-
--   當你從 Store 中提取 state、getters 時，直接解構可能會導致響應性丟失。
-
-```js
-const { count, doubleCount } = useCounterStore();
-```
-
--   因此，在解構時，使用 storeToRefs
-    ![upgit_20241118_1731933312.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731933312.png)
-
-![upgit_20241118_1731933353.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2024/11/upgit_20241118_1731933353.png)
+-   安裝：`npm install axios`
+-   [vue-project-axios]("./vue-project-axios/src/main.js")
