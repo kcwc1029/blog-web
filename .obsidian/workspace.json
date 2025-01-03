@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d2de0eb062e4a777",
+        "id": "6be2c1900ad117a7",
         "type": "tabs",
         "children": [
           {
-            "id": "35cd1e9f3588202c",
+            "id": "e7552bf47be65790",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vue/Vue.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Vue"
+              "title": "新分頁"
             }
           }
         ]
@@ -136,11 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Vue/Vue.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Vue 的大綱"
+              "title": "大綱"
             }
           }
         ],
@@ -160,53 +154,53 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "35cd1e9f3588202c",
+  "active": "e7552bf47be65790",
   "lastOpenFiles": [
-    "Vue/ppt865B.tmp",
-    "Vue/~$Vue_02.pptx",
-    "README.md",
-    "Vue/Vue.md",
-    "Vue/ppt8F13.tmp",
-    "Vue/pptA3C7.tmp",
-    "互動網頁設計/Vue/vue-project-dynamic-components/src/components/ManageGoals.vue",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/validation.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/meta-data.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/unevaluated.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/format-annotation.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/core.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/content.json",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-service/generator/template/src/assets/logo.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/send/node_modules/debug/node_modules/ms/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/send/node_modules/debug/node_modules/ms/license.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/hpack.js/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@types/express/node_modules/@types/express-serve-static-core/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/eslint/node_modules/@babel/code-frame/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/vue-loader-v15/node_modules/hash-sum/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/component-compiler-utils/node_modules/yallist/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/component-compiler-utils/node_modules/postcss/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/component-compiler-utils/node_modules/picocolors/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/component-compiler-utils/node_modules/lru-cache/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/component-compiler-utils/node_modules/hash-sum/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-shared-utils/node_modules/yallist/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-shared-utils/node_modules/semver/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-shared-utils/node_modules/lru-cache/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-shared-utils/node_modules/chalk/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/babel-sugar-v-model/node_modules/html-tags/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/babel-plugin-transform-vue-jsx/node_modules/html-tags/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/babel-preset-app/node_modules/semver/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@eslint/eslintrc/node_modules/type-fest/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@eslint/eslintrc/node_modules/globals/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@eslint/eslintrc/node_modules/ignore/README.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@eslint/eslintrc/node_modules/ignore/CHANGELOG.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@babel/highlight/node_modules/supports-color/readme.md",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_world.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_word.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_zip.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_wrench.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_world.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_word.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_width.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_visualstudio.png",
-    "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_white_vector.png"
+    "Nodejs/pptC7A8.tmp",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/validation.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/meta-data.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/format.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/core.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/content.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2019-09/meta/applicator.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/validation.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/unevaluated.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/meta-data.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/webpack-dev-server/node_modules/ajv/lib/refs/json-schema-2020-12/meta/format-annotation.json",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/cli-service/generator/template/src/assets/logo.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/send/node_modules/debug/node_modules/ms/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/send/node_modules/debug/node_modules/ms/license.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/hpack.js/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@types/express/node_modules/@types/express-serve-static-core/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/eslint/node_modules/@babel/code-frame/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/vue-loader-v15/node_modules/hash-sum/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/cli-shared-utils/node_modules/yallist/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/cli-shared-utils/node_modules/semver/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/cli-shared-utils/node_modules/lru-cache/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/cli-shared-utils/node_modules/chalk/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/component-compiler-utils/node_modules/yallist/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/component-compiler-utils/node_modules/postcss/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/component-compiler-utils/node_modules/lru-cache/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/component-compiler-utils/node_modules/picocolors/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/component-compiler-utils/node_modules/hash-sum/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/babel-sugar-v-model/node_modules/html-tags/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/babel-plugin-transform-vue-jsx/node_modules/html-tags/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@vue/babel-preset-app/node_modules/semver/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@eslint/eslintrc/node_modules/type-fest/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@eslint/eslintrc/node_modules/globals/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@babel/highlight/node_modules/supports-color/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@babel/highlight/node_modules/has-flag/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@babel/highlight/node_modules/color-name/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@babel/highlight/node_modules/escape-string-regexp/readme.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/@babel/highlight/node_modules/color-convert/README.md",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_world.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_word.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_zip.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_wrench.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_world.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_word.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_width.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_visualstudio.png",
+    "Nodejs/fullstack_v01/frontend/node_modules/serve-index/public/icons/page_white_vector.png"
   ]
 }
