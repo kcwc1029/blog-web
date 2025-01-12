@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>v-on_Synchronized_Display</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="events">
+            <input type="text" placeholder="請輸入姓名" @input="setName" />
+            <p>姓名: {{ name }}</p>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                const name = ref("");
+                const setName = (event) => {
+                    name.value = event.target.value;
+                };
+                return { name, setName };
+            },
+        }).mount("#events");
+    </script>
+</html>

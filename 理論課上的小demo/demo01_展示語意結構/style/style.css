@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: antiquewhite;
+}
+body header {
+  width: 100%;
+  background: #eaeaea;
+}
+body nav {
+  width: 100%;
+  color: white;
+  background: black;
+}
+body main {
+  background: skyblue;
+  width: 70%;
+  height: 80vh;
+  float: left;
+}
+body aside {
+  background: pink;
+  width: 30%;
+  height: 80vh;
+  float: right;
+}
+body footer {
+  width: 100%;
+  background: #eaeaea;
+  clear: both;
+}/*# sourceMappingURL=style.css.map */

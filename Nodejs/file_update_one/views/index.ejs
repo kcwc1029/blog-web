@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>檔案上傳</title>
+    </head>
+    <body>
+        <h1>檔案上傳</h1>
+
+        <!-- 檔案上傳表單 -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">選擇檔案：</label>
+            <input type="file" name="file" id="file" required />
+            <br />
+            <button type="submit">上傳</button>
+        </form>
+
+        <!-- 顯示上傳結果 -->
+        <% if (message) { %>
+        <p style="color: green"><%= message %></p>
+        <% } %>
+    </body>
+</html>

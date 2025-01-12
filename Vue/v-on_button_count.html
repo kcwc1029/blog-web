@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>v-on_button_count</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="countPlus">點讚次數：{{ count }}</button>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+
+        createApp({
+            setup() {
+                const count = ref(0);
+                const countPlus = () => {
+                    count.value++;
+                };
+
+                return { count, countPlus };
+            },
+        }).mount("#app");
+    </script>
+</html>

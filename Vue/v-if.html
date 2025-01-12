@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue 3 v-if / v-else-if / v-else</title>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>當前的類型是: {{ type }} (使用模板輸出)</h2>
+            <div v-if="type === 'A'">顯示內容 A</div>
+            <div v-else-if="type === 'B'">顯示內容 B</div>
+            <div v-else-if="type === 'C'">顯示內容 C</div>
+            <div v-else>顯示預設內容</div>
+
+            <!-- 切換內容按鈕 -->
+            <button @click="changeType">切換內容</button>
+        </div>
+
+        <script>
+            const { createApp, ref } = Vue;
+            createApp({
+                setup() {
+                    const type = ref("A"); // 初始類型設為 "A"
+                    const types = ["A", "B", "C", "其他"];
+
+                    const changeType = () => {
+                        const randomIndex = Math.floor(Math.random() * types.length);
+                        type.value = types[randomIndex];
+                    };
+                    return { type, changeType };
+                },
+            }).mount("#app");
+        </script>
+    </body>
+</html>

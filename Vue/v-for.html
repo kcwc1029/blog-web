@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue 3 v-for 清單渲染</title>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .list-item {
+                margin: 0.2rem 0;
+                padding: 0.5rem;
+                background-color: #f0f8ff;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h3>遍歷陣列</h3>
+            <ul>
+                <li class="list-item" v-for="(item, index) in animals" :key="index">{{ index + 1 }}. {{ item }}</li>
+            </ul>
+            <h3>遍歷物件</h3>
+            <ul>
+                <li class="list-item" v-for="(value, key) in person" :key="key">{{ key }}: {{ value }}</li>
+            </ul>
+            <h3>生成數字範圍</h3>
+            <ul>
+                <li class="list-item" v-for="num in 2" :key="num">數字：{{ num }}</li>
+            </ul>
+        </div>
+
+        <script>
+            const { createApp } = Vue;
+            createApp({
+                setup() {
+                    // 陣列範例
+                    const animals = ["吉伊卡哇", "小八貓", "烏薩奇"];
+                    // 物件範例
+                    const person = {
+                        名字: "助教",
+                        年齡: 25,
+                        職業: "熬夜脫髮選拔賽形象大使",
+                    };
+
+                    return { animals, person };
+                },
+            }).mount("#app");
+        </script>
+    </body>
+</html>

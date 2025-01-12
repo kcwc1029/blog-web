@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/demo05_flexbox/">
+    <title>互動網頁設計</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        width: 100%;
+        background-color: #c7ffcf;
+    }
+    header{
+        width: 100%;
+        background-color: #5370d0;
+    }
+    .container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .item{
+        background-color: rgb(162, 221, 246); 
+        height: 10rem;       
+        width: 30%;
+    }
+    footer{
+        width: 100%;
+        background-color: #5370d0;
+    }
+</style>
+<body>
+    <header><h1>header</h1></header>
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+    <footer><h1>footer</h1></footer>
+</body>
+</html>

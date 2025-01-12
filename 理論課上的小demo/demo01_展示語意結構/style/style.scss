@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%; 
+    background-color: antiquewhite;
+    // min-width: 600px; 
+    // max-width: 960px;
+
+    header{
+        width: 100%;	 
+        background: #eaeaea;		
+    }
+    nav{
+        width: 100%;
+        color: white;
+        background: black; 		
+    }
+    main{
+        background: skyblue;
+        width: 70%;
+        height: 80vh;
+        float: left;
+    }
+    aside{
+        background: pink;
+        width: 30%;
+        height: 80vh;
+        float: right;
+    }
+    footer{
+        width: 100%;
+        background: #eaeaea;	
+        // 清除浮動 (float) 的影響
+        // 當一個元素的前面有其他元素使用了 float: left 或 float: right 
+        // clear 可以讓該元素清除浮動
+        clear: both;       	 
+    }
+
+}

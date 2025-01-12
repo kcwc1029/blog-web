@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bind attribute</title>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <img v-bind="objectImg" />
+            <img v-bind:src="img_url" alt="動態圖片" />
+            <button :disabled="isDisable">這是按鈕</button>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                // 動態綁定字串
+                const img_url = ref("https://i.pinimg.com/236x/ce/a2/36/cea2368c834bfe17253657c8811d851f.jpg");
+                // 動態綁定布林
+                const isDisable = ref(true);
+                // 動態多綁定
+                const objectImg = ref({
+                    src: "https://i.pinimg.com/236x/94/c0/14/94c0143c80ecef0f090341b0d433b6c0.jpg",
+                    width: "200",
+                });
+                return { img_url, isDisable, objectImg };
+            },
+        }).mount("#app");
+    </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue 3 v-model 修飾符範例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h3>範例 1: lazy 修飾符</h3>
+            <input type="text" v-model.lazy="lazyMessage" />
+            <p>輸入訊息如下: {{ lazyMessage }}</p>
+
+            <h3>範例 2: trim 修飾符</h3>
+            <input type="text" v-model.trim="trimMessage" />
+            <p>去除空白後的輸入訊息如下: {{ trimMessage }}</p>
+
+            <h3>範例 3: number 修飾符</h3>
+            <p>數字 1: <input type="text" v-model.number="num1" /></p>
+            <p>數字 2: <input type="text" v-model.number="num2" /></p>
+            <p>數字 1 + 數字 2: {{ num1 + num2 }}</p>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+
+        createApp({
+            setup() {
+                const lazyMessage = ref(""); // 將於按下 Enter 時更新
+                const trimMessage = ref(""); // 去除輸入值的前後空白
+                const num1 = ref(0); // 自動轉換為數字類型
+                const num2 = ref(0); // 自動轉換為數字類型
+
+                return {
+                    lazyMessage,
+                    trimMessage,
+                    num1,
+                    num2,
+                };
+            },
+        }).mount("#app");
+    </script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Basics</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>1. 單行文字輸入</h2>
+            <input type="text" v-model="message" />
+            <p>輸入訊息如下：{{ message }}</p>
+
+            <h2>2. 單選按鈕</h2>
+            <p>確認哥布林：{{ Goblin }}</p>
+            <input type="radio" id="yes" value="是" v-model="Goblin" />
+            <label for="yes">是</label>
+            <input type="radio" id="no" value="否" v-model="Goblin" />
+            <label for="no">否</label>
+
+            <h2>3. 多選按鈕</h2>
+            <p>興趣 (可複選): {{ interest }}</p>
+            <input type="checkbox" id="reading" value="閱讀" v-model="interest" />
+            <label for="reading">閱讀</label>
+            <input type="checkbox" id="sports" value="運動" v-model="interest" />
+            <label for="sports">運動</label>
+            <input type="checkbox" id="gardening" value="園藝" v-model="interest" />
+            <label for="gardening">園藝</label>
+
+            <h2>4. 下拉選單</h2>
+            <p>最高學歷：{{ education }}</p>
+            <select v-model="education">
+                <option disabled value="">請選擇一個</option>
+                <option value="碩士或以上">碩士或以上</option>
+                <option value="大專">大專</option>
+                <option value="高中或以下">高中或以下</option>
+            </select>
+
+            <h2>5. 多行文字輸入</h2>
+            <textarea rows="5" v-model="textarea"></textarea>
+            <p style="white-space: pre-line">輸入訊息如下：<br />{{ textarea }}</p>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                const message = ref("");
+                const Goblin = ref("是");
+                const interest = ref([]);
+                const education = ref("");
+                const textarea = ref("");
+                return { message, Goblin, interest, education, textarea };
+            },
+        }).mount("#app");
+    </script>
+</html>

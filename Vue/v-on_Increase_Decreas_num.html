@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>v-on_Increase_Decreas_num</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="events">
+            <button @click="increaseCounter(1)">Add 1</button>
+            <button @click="decreaseCounter(1)">Remove 1</button>
+            <hr />
+            <button @click="increaseCounter(5)">Add 5</button>
+            <button @click="decreaseCounter(5)">Remove 5</button>
+            <p>Result: {{ counter }}</p>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+
+        createApp({
+            setup() {
+                const counter = ref(0);
+                const increaseCounter = (num) => {
+                    counter.value += num;
+                };
+                const decreaseCounter = (num) => {
+                    counter.value -= num;
+                };
+                return { counter, increaseCounter, decreaseCounter };
+            },
+        }).mount("#events");
+    </script>
+</html>
