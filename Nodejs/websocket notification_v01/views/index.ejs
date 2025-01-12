@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>即時通知</title>
+    </head>
+    <body>
+        <h1>WebSocket 即時通知</h1>
+        <div id="app">
+            <input type="text" v-model="messageToSend" placeholder="輸入訊息" />
+            <button @click="sendMessage">發送訊息</button>
+            <ul>
+                <li v-for="(notification, index) in notifications" :key="index">
+                    {{ notification }}
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        const { ref, createApp } = Vue;
+        createApp({
+            setup() {
+                const notifications = ref([]); // 用於顯示通知列表
+                const messageToSend = ref(""); // 綁定輸入框的訊息
+                let ws = null;
+                // TODO: 連線&收消息
+                const mounted = () => {
+                    ws = new WebSocket("ws://localhost:3000/ws");
+                    // 當 WebSocket 連線成功
+                    ws.onopen = () => console.log("已連接到伺服器");
+                    // 當收到伺服器訊息
+                    ws.onmessage = (event) => {
+                        notifications.value.push(event.data);
+                    };
+                    // 當 WebSocket 發生錯誤
+                    ws.onerror = (error) => console.error("WebSocket 錯誤：", error);
+                };
+                // TODO: 發消息
+                const sendMessage = () => {
+                    if (ws && ws.readyState === WebSocket.OPEN) {
+                        ws.send(messageToSend.value); // 發送回伺服器
+                        messageToSend.value = ""; // 清空輸入框
+                    } else {
+                        console.error("WebSocket 尚未連接或連接已關閉");
+                    }
+                };
+                mounted();
+                return { notifications, messageToSend, sendMessage };
+            },
+        }).mount("#app");
+    </script>
+</html>
