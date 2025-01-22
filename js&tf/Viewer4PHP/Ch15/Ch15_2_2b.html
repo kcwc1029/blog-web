@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch15_2_2b.html</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+</head>
+<body>
+<script>
+let data_path="https://fchart.github.io/test/iris.json";    
+async function getData() {
+  const irisDataReq = await fetch(data_path); 
+  const irisData = await irisDataReq.json(); 
+  const filterData = irisData.map(flower => ({
+    pLength: flower.petalLength,
+    pWidth: flower.petalWidth,
+    species: flower.species
+  }))
+  .filter(flower => (flower.pLength != null && flower.pWidth != null
+                     && flower.species != null));
+  return filterData;
+}
+ 
+async function visualization() {
+  const data = await getData();
+  const setosa = data.filter(d => (d.species == "setosa"))
+  .map(d => ({ x: d.pLength, y: d.pWidth }));
+  const virginica = data.filter(d => (d.species == "virginica"))
+  .map(d => ({ x: d.pLength, y: d.pWidth }));
+  const versicolor = data.filter(d => (d.species == "versicolor"))
+  .map(d => ({ x: d.pLength, y: d.pWidth }));
+  tfvis.render.scatterplot(
+    { name: "Petal Length v Petal Width" },
+    { values: [setosa, virginica, versicolor],
+      series: ["setosa", "virginica", "versicolor"]},
+    { xLabel: "Petal Length", yLabel: "Petal Width",
+      height: 300}
+  );
+}
+visualization();
+</script>
+</body>
+</html>

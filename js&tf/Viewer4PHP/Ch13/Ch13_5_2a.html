@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_5_2a.html</title>
+<style type="text/css">
+.box {
+   width:300px;
+   background-color:#ffffff;
+   border:2px solid blue;
+   padding:10px;
+}
+</style> 
+
+</head>
+<body>
+<script>
+let url = "https://fchart.github.io/img/Butterfly.png";
+fetch(url)
+  .then((response) => {
+    return response.blob();
+  })
+  .then((imageBlob) => {
+    let img = document.getElementById('result');
+    img.src = URL.createObjectURL(imageBlob);
+  })
+</script>
+<img id="result" class="box">
+</body>
+</html>

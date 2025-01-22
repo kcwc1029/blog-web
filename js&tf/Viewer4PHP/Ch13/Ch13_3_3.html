@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ch13_3_3.html</title>
+<script>
+var jsontxt = '{ "Boss": "陳會安", ' +
+  '"Employees": [' +
+  '  { "name" : "陳允傑", "tel" : "02-22222222" },'+
+  '  { "name" : "江小魚", "tel" : "03-33333333" },'+
+  '  { "name" : "陳允東", "tel" : "04-44444444" }' +
+  ']}';
+var obj = JSON.parse(jsontxt);
+</script>
+</head>
+<body>
+<p>
+姓名: <span id="name"></span><br/>
+電話: <span id="tel"></span><br/>
+</p>
+<script>
+document.getElementById("name").innerHTML = obj.Employees[1].name;
+document.getElementById("tel").innerHTML = obj.Employees[1].tel;
+</script>
+</body>
+</html>

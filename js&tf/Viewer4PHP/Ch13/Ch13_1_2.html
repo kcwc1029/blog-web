@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ch13_1_2.html</title>
+</head>
+<body>
+<script>
+function delay(value) {
+   return new Promise(function(resolve, reject) {
+      if (value) {
+         setTimeout(function(value){
+            resolve("成功延遲執行");
+         }, 1000);      
+      }   
+      else {
+         reject("結束延遲執行!");
+      }   
+   });
+}
+delay(true)
+    .then(function(value) {
+      document.write(value + " 1: 猫<br/>"); 
+      return delay(true);
+    })
+    .then(function(value) {
+      document.write(value + " 2: 老虎<br/>");
+      return delay(true);
+    })
+    .then(function(value) {
+      document.write(value + " 3: 獅子<br/>");
+      return delay(false);
+    })
+    .catch(function(error) {
+      document.write(error + "<br/>");
+    });
+</script>
+</body>
+</html>

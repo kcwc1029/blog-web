@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>js & tf</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+    </head>
+    <body></body>
+    <script>
+        let celsius = [
+            { x: 1, y: 25.6 },
+            { x: 3, y: 23.2 },
+            { x: 5, y: 18.5 },
+            { x: 7, y: 28.3 },
+            { x: 9, y: 26.5 },
+            { x: 11, y: 30.5 },
+            { x: 13, y: 32.6 },
+            { x: 15, y: 33.1 },
+        ];
+        tfvis.render.linechart(
+            { name: "住家氣溫", tab: "折線圖" },
+            { values: [celsius], series: ["Home"] },
+            { xLabel: "日數", yLabel: "攝氏溫度", height: 300, width: 400 }
+        );
+    </script>
+</html>

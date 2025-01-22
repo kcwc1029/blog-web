@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ch16_1a.html</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+<div>
+  <label for="src" class="label">圖片網址:</label>
+  <input type="text" id="src" size="30" 
+         value="https://fchart.github.io/img/Butterfly.png"> 
+  <input type="button" value="顯示" onclick="loadImg();">
+  <input type="button" value="預測" onclick="predict();">
+</div><br/>
+<img id="img" src="images\koala.png" width="300" height="300" crossorigin/>
+<p id="result"></p>
+<script>
+async function predict() { 
+  let img = document.getElementById("img"); 
+  const result = await mobilenet_model.classify(img);
+  p.innerHTML = result[0].className;
+  console.table(result);
+}
+       
+function loadImg() {
+  p.innerHTML = "等待圖片載入..."
+  let img = document.getElementById("img"); 
+  img.src = document.getElementById("src").value;
+  p.innerHTML = "按[預測]鈕預測圖片..." 
+}
+
+async function app() {
+  mobilenet_model = await mobilenet.load();  
+  p = document.getElementById("result");
+  predict();
+}
+app();
+</script> 
+</body>
+</html>
+

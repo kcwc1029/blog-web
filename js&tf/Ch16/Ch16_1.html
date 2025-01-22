@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ch16_1.html</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+<img id="img" src="images\penguins.png" width="300" height="300"/>
+<p id="result"></p>
+<script>
+const img = document.getElementById('img');  
+mobilenet.load().then(model => {
+  model.classify(img).then(result => {
+    document.getElementById("result").innerHTML = result[0].className;
+    console.table(result);
+  });
+});
+</script> 
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ch14_4_2a.html</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    </head>
+    <body>
+        <script>
+            // TODO: randomNormal
+            const x = tf.randomNormal([2, 2]);
+            document.write("張量x值: " + x + "<br/>");
+            document.write("shape: " + x.shape + "<br/>");
+
+            const y = tf.randomNormal([2, 2], 10, 0.6);
+            document.write("張量y值: " + y + "<br/>");
+            document.write("shape: " + y.shape + "<br/>");
+
+            // TODO: randomUniform
+            const x1 = tf.randomUniform([2, 2]);
+            document.write("張量x1值: " + x1 + "<br/>");
+            document.write("shape: " + x1.shape + "<br/>");
+
+            const y1 = tf.randomUniform([2, 2], -5, 5);
+            document.write("張量y1值: " + y1 + "<br/>");
+            document.write("shape: " + y1.shape + "<br/>");
+        </script>
+    </body>
+</html>

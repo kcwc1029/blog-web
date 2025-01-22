@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch15_2_2.html</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+</head>
+<body>
+<script>
+let data_path="https://fchart.github.io/test/iris.json";  
+async function getData() {
+  const irisDataReq = await fetch(data_path); 
+  const irisData = await irisDataReq.json(); 
+  const filterData = irisData.map(flower => ({
+    sLength: flower.sepalLength,
+    sWidth: flower.sepalWidth,
+    pLength: flower.petalLength,
+    pWidth: flower.petalWidth
+  }))
+  .filter(flower => (flower.sLength != null && flower.sWidth != null 
+               && flower.pLength != null && flower.pWidth != null));
+  return filterData;
+}
+ 
+async function visualization() {
+  const data = await getData();
+  const sepals = data.map(d => ({ x: d.sLength, y: d.sWidth }));
+  const petals = data.map(d => ({ x: d.pLength, y: d.pWidth }));
+  tfvis.render.scatterplot(
+    { name: "Sepal/Petal Length v Sepal/Petal Width" },
+    { values: [sepals, petals], series: ["Sepal", "Petal"] },
+    { xLabel: "Sepal/Petal Length", yLabel: "Sepal/Petal Width",
+      height: 300 }
+  );
+}
+visualization();
+</script>
+</body>
+</html>

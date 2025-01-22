@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ch14_5_2.html</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+	</head>
+	<body>
+		<script>
+			let data = [
+				{ x: 0, y: 87 },
+				{ x: 0, y: 89 },
+				{ x: 0, y: 91 },
+				{ x: 1, y: 90 },
+				{ x: 1.3, y: 82 },
+				{ x: 1.5, y: 80 },
+				{ x: 2, y: 78 },
+				{ x: 2.2, y: 81 },
+				{ x: 2.6, y: 76 },
+				{ x: 3.2, y: 85 },
+				{ x: 4.1, y: 80 },
+				{ x: 4.4, y: 75 },
+				{ x: 4.4, y: 73 },
+				{ x: 5, y: 72 },
+			];
+
+			tfvis.render.scatterplot(
+				{ name: "手機使用時數和工作效率", tab: "散佈圖" },
+				{ values: data, series: ["時數與效率"] },
+				{ xLabel: "時數", yLabel: "工作效率", xAxisDomain: [-1, 6], yAxisDomain: [70, 95], height: 300, width: 400 }
+			);
+		</script>
+	</body>
+</html>

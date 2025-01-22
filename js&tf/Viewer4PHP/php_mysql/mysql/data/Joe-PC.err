@@ -1,0 +1,15 @@
+160816 21:01:37 [Note] Event Scheduler: Loaded 0 events
+160816 21:01:37 [Note] .\php_mysql\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.1.40'  socket: ''  port: 3306  Source distribution
+160816 21:36:54 [Note] Event Scheduler: Loaded 0 events
+160816 21:36:54 [Note] .\php_mysql\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.1.40'  socket: ''  port: 3306  Source distribution
+Can't start server: Bind on TCP/IP port: No such file or directory
+170422 10:17:43 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+170422 10:17:43 [ERROR] Aborting
+
+170422 10:17:43 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+170422 10:28:04 [Note] Event Scheduler: Loaded 0 events
+170422 10:28:04 [Note] .\php_mysql\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.1.40'  socket: ''  port: 3306  Source distribution

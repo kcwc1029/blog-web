@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ch14_4_4c.html</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    </head>
+    <body>
+        <script>
+            // TODO: 使用dispose釋放記憶體
+            const x = tf.tensor([
+                [1, 2],
+                [3, 4],
+            ]);
+            document.write("張量x值: " + x + "<br/>");
+            x.dispose();
+
+            // TODO: 使用tidy自動清除
+            const y = tf.tensor([
+                [5, 6],
+                [7, 8],
+            ]);
+            document.write("張量y值: " + y + "<br/>");
+            const z = tf.tidy(() => {
+                const result = y.square().log().neg();
+                return result;
+            });
+            document.write("張量z值: " + z + "<br/>");
+
+            // TODO: 釋放y和z的記憶體
+            y.dispose();
+            z.dispose();
+        </script>
+    </body>
+</html>

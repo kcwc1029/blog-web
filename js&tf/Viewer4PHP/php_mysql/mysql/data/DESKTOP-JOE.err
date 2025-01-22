@@ -1,0 +1,42 @@
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 10:59:49 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 10:59:49 [ERROR] Aborting
+
+200620 10:59:49 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:06:10 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:06:10 [ERROR] Aborting
+
+200620 11:06:10 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:09:34 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:09:34 [ERROR] Aborting
+
+200620 11:09:34 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:17:40 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:17:40 [ERROR] Aborting
+
+200620 11:17:40 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:26:07 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:26:07 [ERROR] Aborting
+
+200620 11:26:07 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:34:43 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:34:43 [ERROR] Aborting
+
+200620 11:34:43 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: No such file or directory
+200620 11:47:15 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+200620 11:47:15 [ERROR] Aborting
+
+200620 11:47:15 [Note] .\php_mysql\mysql\bin\mysqld.exe: Shutdown complete
+

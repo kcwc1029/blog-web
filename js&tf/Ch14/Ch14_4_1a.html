@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>tensorflow.js</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    </head>
+    <body>
+        <script>
+            const x = tf.tensor1d([1.2, 5.5, 8.7, 10.5]);
+            document.write("x值: " + x + "<br/>");
+            document.write("rank: " + x.rank + "<br/>");
+            document.write("shape: " + x.shape + "<br/>");
+            document.write("type: " + x.dtype + "<br/>");
+        </script>
+    </body>
+</html>

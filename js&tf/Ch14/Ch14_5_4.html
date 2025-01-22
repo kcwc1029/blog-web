@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ch14_5_4.html</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+	</head>
+	<body>
+		<script>
+			let data = tf.randomNormal([1500]); // 常態分布1500比資料
+			tfvis.render.histogram(
+				{ name: "使用randomNormal()方法", tab: "直方圖" },
+				data.dataSync(),
+				{ xLabel: "x", yLabel: "y", maxBins: 50, height: 300, width: 400 } // maxBins 分割最大區間數
+			);
+		</script>
+	</body>
+</html>
