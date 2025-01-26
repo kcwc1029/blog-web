@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS 背景屬性範例</title>
+		<style>
+			.box {
+				width: 300px;
+				height: 200px;
+				border: 2px solid black;
+				margin-bottom: 20px;
+				padding: 20px;
+				color: rgb(0, 0, 0);
+				text-align: center;
+			}
+			.usagi {
+				background-image: url("https://i.pinimg.com/736x/11/05/92/1105922fa90d5620d7418ef788c9f652.jpg");
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box usagi" style="background-repeat: no-repeat; background-position: 0% 0%; background-size: contain; background-attachment: fixed">
+			完整顯示在元素內，固定不隨內容捲動。
+		</div>
+		<div class="box usagi" style="background-repeat: no-repeat; background-position: center; background-size: cover">
+			背景圖片居中，不重複，覆蓋整個元素。
+		</div>
+
+		<div class="box usagi" style="background-repeat: repeat; background-size: 100px 100px">背景圖片重複排列，大小為 100px x 100px。</div>
+	</body>
+</html>

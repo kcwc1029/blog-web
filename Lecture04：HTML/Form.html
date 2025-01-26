@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>表單範例</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+			form {
+				max-width: 600px;
+				margin: 0 auto;
+			}
+			p {
+				margin-bottom: 15px;
+			}
+			input[type="text"],
+			input[type="email"],
+			input[type="password"],
+			textarea,
+			select {
+				width: 100%;
+				padding: 8px;
+				margin-top: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			input[type="radio"],
+			input[type="checkbox"] {
+				margin-right: 10px;
+			}
+			input[type="submit"],
+			input[type="reset"] {
+				padding: 10px 20px;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			input[type="submit"]:hover,
+			input[type="reset"]:hover {
+				background-color: #45a049;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="post" action="">
+			<!-- PartA -->
+			<input type="hidden" name="表格分類" value="我是A表格" />
+			<p>姓名：<input type="text" name="userName" id="userName" placeholder="請輸入姓名" /></p>
+			<p>email：<input type="email" name="userMail" id="userMail" placeholder="請輸入mail" /></p>
+			<p>身分證字號：<input type="password" name="Identification" id="Identification" placeholder="請輸入身分證字號" /></p>
+			<p>
+				性別： <input type="radio" name="userSex" id="userSex1" value="sex01" />女
+				<input type="radio" name="userSex" id="userSex2" value="sex02" />哥布林 <input type="radio" name="userSex" id="userSex3" value="sex03" />其他
+			</p>
+			<!-- PartB -->
+			<p>
+				乙組系上有哪些老師： <input type="checkbox" name="teacher[]" id="teacher1" value="黃悅民" checked />黃悅民
+				<input type="checkbox" name="teacher[]" id="teacher2" value="侯廷偉" />侯廷偉
+				<input type="checkbox" name="teacher[]" id="teacher3" value="賴瑾峰" />賴瑾峰
+				<input type="checkbox" name="teacher[]" id="teacher4" value="陳世曄" />陳世曄
+				<input type="checkbox" name="teacher[]" id="teacher5" value="烏薩奇" />烏薩奇
+			</p>
+			<p>
+				請撰寫500字心得：<br />
+				<textarea name="thoughts" id="thoughts" rows="5" cols="50" placeholder="請撰寫500字心得"></textarea>
+			</p>
+			<!-- PartC -->
+			<p>
+				你是哪一種哥布林：
+				<select name="Goblin" id="Goblin">
+					<option value="Hob">鄉巴佬</option>
+					<option value="Shaman">薩滿</option>
+					<option value="Champion">英雄</option>
+					<option value="Lord">王</option>
+					<option value="Paladin">聖騎士</option>
+					<option value="Dragoon">羅馬士</option>
+				</select>
+			</p>
+			<!-- PartD -->
+			<p>
+				輸入日期：<br />
+				<input type="date" name="date" id="date" />
+			</p>
+
+			<p>
+				輸入時間：<br />
+				<input type="time" name="time" id="time" />
+			</p>
+
+			<input type="submit" value="submit" />
+			<input type="reset" value="reset" />
+		</form>
+	</body>
+</html>

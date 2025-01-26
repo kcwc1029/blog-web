@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main></main>
+	</body>
+	<script type="module">
+		import * as THREE from "https://unpkg.com/three@latest/build/three.module.js";
+
+		// TODO: 建立scene
+		const scene = new THREE.Scene();
+		// TODO: 建立camera
+		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		camera.position.set(5, 0, 15); // Camera 身為鏡頭，有位置屬性，設定在Z軸即可。
+		// TODO: 建立renderer
+		const renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight); // 渲染器負責投影畫面在螢幕上，會需要寬高
+		document.body.appendChild(renderer.domElement); // 渲染器會產生canvas物件，我們在html的body放置它
+		// TODO: 建立兩個物體
+		const geometry = new THREE.BoxGeometry(1, 1, 1); // 建立一個形狀，用來定義物體的形狀為長寬高為1的正方體
+		const material = new THREE.MeshNormalMaterial({ color: 0x0000ff }); // 換成MeshNormalMaterial
+		const parent = new THREE.Mesh(geometry, material);
+		const child = new THREE.Mesh(geometry, material);
+		// 接著，把parent加到世界裡，把child加到parent裡
+		scene.add(parent);
+		parent.add(child); // 很像setInterval的函式。每一幀都會執行這個函式
+		parent.position.x = 10;
+		child.position.x = 5;
+		// TODO: 每一幀執行
+		function animate() {
+			// 每一幀物體都會自轉
+			parent.rotation.y += 0.01;
+			requestAnimationFrame(animate); // 它每一幀執行animate()
+			renderer.render(scene, camera); // 每一幀，場景物件都會被鏡頭捕捉
+		}
+		animate();
+	</script>
+</html>

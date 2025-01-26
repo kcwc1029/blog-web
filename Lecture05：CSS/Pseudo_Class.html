@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS 虛擬類別範例</title>
+		<style>
+			/* 未被訪問過的超連結 */
+			a:link {
+				color: blue;
+			}
+
+			/* 已被訪問過的超連結 */
+			a:visited {
+				color: purple;
+			}
+
+			/* 滑鼠懸停時的超連結 */
+			a:hover {
+				background-color: yellow;
+			}
+
+			/* 被點擊時的超連結 */
+			a:active {
+				color: red;
+			}
+
+			/* 獲得焦點的輸入框 */
+			input:focus {
+				background-color: rgb(225, 113, 237);
+			}
+
+			/* 第二個列表項 */
+			li:nth-child(2) {
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS 虛擬類別範例</h1>
+		<ul>
+			<li>第一項</li>
+			<li>第二項</li>
+			<li>第三項</li>
+		</ul>
+		<a href="#">這是一個超連結</a>
+		<input type="text" placeholder="輸入文字" />
+	</body>
+</html>

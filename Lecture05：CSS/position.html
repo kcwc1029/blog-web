@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS position 範例</title>
+		<style>
+			body {
+				height: 2000px; /* 讓頁面可以滾動 */
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS position 範例</h1>
+		<!-- sticky -->
+		<div style="position: sticky; top: 0; z-index: 1; background-color: rgb(28, 169, 216); width: 100%; height: 50px">這是 sticky 元素。</div>
+		<!-- static -->
+		<div style="position: static; background-color: lightblue; width: 100px; height: 100px">這是 static 元素。</div>
+		<!-- relative -->
+		<div style="position: relative; top: 20px; left: 30px; background-color: lightgreen; width: 100px; height: 100px">這是 relative 元素。</div>
+
+		<!-- absolute -->
+		<div style="position: relative; width: 200px; height: 200px; background-color: pink">
+			<div style="position: absolute; top: 50px; left: 50px; background-color: lightblue; width: 100px; height: 100px">這是 absolute 元素。</div>
+		</div>
+
+		<!-- fixed -->
+		<div style="position: fixed; top: 20px; right: 20px; background-color: lightcoral; width: 100px; height: 100px">這是 fixed 元素。</div>
+	</body>
+</html>

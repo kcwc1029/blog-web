@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS !important 範例</title>
+		<style>
+			/* 樣式 1 */
+			p {
+				color: blue;
+			}
+
+			/* 樣式 2 */
+			p {
+				color: red !important;
+			}
+
+			/* 內聯樣式 */
+			.inline-style {
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<p>這是一個段落。</p>
+		<p class="inline-style" style="color: green">這是一個有內聯樣式的段落。</p>
+	</body>
+</html>

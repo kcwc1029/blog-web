@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS overflow 範例</title>
+		<style>
+			.container {
+				width: 200px;
+				height: 100px;
+				border: 2px solid black;
+				margin-bottom: 20px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS overflow 範例</h1>
+
+		<!-- visible（預設值） -->
+		<div class="container" style="overflow: visible">
+			<p>這是一個內容超出容器的範例。</p>
+			<p>這是一個內容超出容器的範例。</p>
+		</div>
+
+		<!-- hidden -->
+		<div class="container" style="overflow: hidden">
+			<p>這是一個內容超出容器的範例。</p>
+			<p>這是一個內容超出容器的範例。</p>
+		</div>
+
+		<!-- scroll -->
+		<div class="container" style="overflow: scroll">
+			<p>這是一個內容超出容器的範例。</p>
+			<p>這是一個內容超出容器的範例。</p>
+		</div>
+
+		<!-- auto -->
+		<div class="container" style="overflow: auto">
+			<p>這是一個內容超出容器的範例。</p>
+			<p>這是一個內容超出容器的範例。</p>
+		</div>
+	</body>
+</html>

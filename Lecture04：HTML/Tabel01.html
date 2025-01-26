@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 基本表格 -->
+		<table border="1">
+			<caption>
+				基本表格範例
+			</caption>
+			<tr>
+				<th>姓名</th>
+				<th>年齡</th>
+				<th>城市</th>
+			</tr>
+			<tr>
+				<td>張三</td>
+				<td>25</td>
+				<td>台北</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>30</td>
+				<td>台中</td>
+			</tr>
+		</table>
+
+		<!-- 合併單元格的表格 -->
+		<table border="1">
+			<caption>
+				合併單元格範例
+			</caption>
+			<tr>
+				<th colspan="2">姓名與年齡</th>
+				<th>城市</th>
+			</tr>
+			<tr>
+				<td>張三</td>
+				<td>25</td>
+				<td rowspan="2">台北</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>30</td>
+			</tr>
+		</table>
+	</body>
+</html>

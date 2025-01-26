@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>layout_example.html</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				width: 100%;
+				background-color: antiquewhite;
+			}
+
+			header {
+				width: 100%;
+				background: #eaeaea;
+			}
+
+			nav {
+				width: 100%;
+				color: white;
+				background: black;
+			}
+
+			main {
+				background: skyblue;
+				width: 70%;
+				height: 80vh;
+				float: left;
+			}
+
+			aside {
+				background: pink;
+				width: 30%;
+				height: 80vh;
+				float: right;
+			}
+
+			footer {
+				width: 100%;
+				background: #eaeaea;
+				/* 清除浮動 (float) 的影響 */
+				/* 當一個元素的前面有其他元素使用了 float: left 或 float: right */
+				/* clear 可以讓該元素清除浮動 */
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>頁首</h1>
+		</header>
+		<nav>
+			<h1>導覽列</h1>
+		</nav>
+		<main>
+			<h1>主要內容</h1>
+		</main>
+		<aside>
+			<h1>側邊欄</h1>
+		</aside>
+		<footer>
+			<h1>頁尾</h1>
+		</footer>
+	</body>
+</html>

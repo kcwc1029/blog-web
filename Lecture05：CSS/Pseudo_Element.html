@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS 虛擬元素範例</title>
+		<style>
+			/* 在段落前面插入內容 */
+			p::before {
+				content: "★ ";
+				color: rgb(255, 31, 24);
+			}
+			/* 段落的第一個字母 */
+			p::first-letter {
+				color: red;
+				font-size: 2em;
+			}
+
+			/* 段落的第一行 */
+			p::first-line {
+				font-weight: bold;
+				color: blue;
+			}
+
+			/* 在段落後面插入內容 */
+			p::after {
+				content: " 《透過p::after插入的字》";
+				color: blue;
+			}
+
+			/* 選取文字的樣式 */
+			::selection {
+				background-color: yellow;
+				color: black;
+			}
+
+			/* 其他樣式 */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+				line-height: 1.6;
+			}
+			h1 {
+				color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS 虛擬元素範例</h1>
+		<p>這是一個段落，用來展示 CSS 虛擬元素的效果。你可以看到第一個字母變大且變紅，第一行文字變粗且變藍，段落前後還插入了裝飾性內容。</p>
+		<p>另一個段落，用來進一步展示虛擬元素的功能。選取這段文字時，背景會變成黃色，文字變成黑色。</p>
+	</body>
+</html>

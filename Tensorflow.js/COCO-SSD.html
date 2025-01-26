@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>COCO-SSD</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+	</head>
+	<body>
+		<img id="object" src="images/objects.jpg" style="position: absolute; top: 0; left: 0" />
+		<canvas id="output" style="position: absolute; top: 0; left: 0"></canvas>
+	</body>
+	<script>
+		async function detect() {
+			// 定義用於繪製邊框的顏色陣列
+			const color = ["green", "yellow", "red", "blue"];
+			// 使用 COCO-SSD 模型檢測圖片中的物件
+			const results = await model.detect(img);
+			alert(results.length); // 彈出視窗顯示檢測到的物件數量
+			console.log(results); // 在控制台輸出檢測結果
+
+			// 如果有檢測到物件
+			if (results.length > 0) {
+				// 清除畫布
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				// 遍歷每個檢測到的物件
+				for (let i = 0; i < results.length; i++) {
+					ctx.beginPath(); // 開始繪製路徑
+					// 繪製物件的邊框（bbox 是物件的邊界框座標）
+					ctx.rect(...results[i].bbox);
+					ctx.lineWidth = 3; // 設置邊框寬度
+					ctx.strokeStyle = color[i % 4]; // 設置邊框顏色（循環使用顏色陣列）
+					ctx.fillStyle = color[i % 4]; // 設置文字顏色
+					ctx.stroke(); // 繪製邊框
+					// 在邊框上方顯示物件的置信度和類別
+					ctx.fillText(
+						// 置信度（分數）和類別
+						results[i].score.toFixed(3) + "/" + results[i].class,
+						results[i].bbox[0], // 文字的 x 座標
+						results[i].bbox[1] - 5 // 文字的 y 座標（稍微向上偏移）
+					);
+				}
+			}
+		}
+
+		async function app() {
+			// 獲取畫布和圖片元素
+			canvas = document.getElementById("output");
+			img = document.getElementById("object");
+			// 設置畫布的寬度和高度與圖片的原始尺寸一致
+			canvas.width = img.naturalWidth;
+			canvas.height = img.naturalHeight;
+			// 獲取畫布的 2D 繪圖上下文
+			ctx = canvas.getContext("2d");
+			ctx.font = "20px Arial"; // 設置文字的字體和大小
+			// 加載 COCO-SSD 模型
+			model = await cocoSsd.load();
+			detect(); // 執行物件檢測
+		}
+
+		app();
+	</script>
+</html>

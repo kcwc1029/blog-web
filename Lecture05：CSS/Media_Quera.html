@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS 媒體查詢範例</title>
+		<style>
+			/* 預設樣式 */
+			body {
+				background-color: lightgray;
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+
+			/* 螢幕寬度小於 600px 時的樣式 */
+			@media screen and (max-width: 600px) {
+				body {
+					background-color: lightblue;
+				}
+			}
+
+			/* 螢幕寬度大於 1200px 時的樣式 */
+			@media screen and (min-width: 1200px) {
+				body {
+					background-color: lightgreen;
+				}
+			}
+
+			/* 列印時的樣式 */
+			@media print {
+				body {
+					background-color: white;
+					color: black;
+					font-size: 12pt;
+				}
+			}
+
+			/* 螢幕方向為直向時的樣式 */
+			@media screen and (orientation: portrait) {
+				body {
+					background-color: hotpink;
+				}
+			}
+
+			/* 螢幕方向為橫向時的樣式 */
+			@media screen and (orientation: landscape) {
+				body {
+					background-color: orange;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS 媒體查詢範例</h1>
+		<p>調整瀏覽器視窗大小或切換設備方向，查看背景顏色的變化。</p>
+	</body>
+</html>

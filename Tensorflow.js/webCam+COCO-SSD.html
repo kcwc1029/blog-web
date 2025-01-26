@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>webCam+COCO-SSD</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+	</head>
+	<body>
+		<div style="height: 100px"></div>
+		<video autoplay muted id="video" width="300" height="300"></video>
+		<canvas id="output" style="position: absolute; top: 100; left: 0"></canvas>
+	</body>
+	<script>
+		const color = ["green", "yellow", "red", "blue"]; // 定義用於繪製邊框的顏色陣列
+		// 設置網路攝影機
+		async function setupWebcam() {
+			video = document.getElementById("video"); // 獲取 video 元素
+			// 請求使用者授權使用攝影機
+			const stream = await navigator.mediaDevices.getUserMedia({
+				audio: false, // 不啟用音訊
+				video: { facingMode: "user" }, // 使用前置鏡頭
+			});
+			video.srcObject = stream; // 將攝影機串流綁定到 video 元素
+
+			// 返回一個 Promise，當 video 的 metadata 加載完成時解析
+			return new Promise((resolve) => {
+				video.onloadedmetadata = () => {
+					resolve(video); // 解析 video 元素
+				};
+			});
+		}
+
+		// 檢測物件
+		async function detect() {
+			// 使用 COCO-SSD 模型檢測 video 中的物件
+			const results = await model.detect(video);
+			if (results.length > 0) {
+				// 清除畫布
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+				// 遍歷每個檢測到的物件
+				for (let i = 0; i < results.length; i++) {
+					ctx.beginPath(); // 開始繪製路徑
+					// 繪製物件的邊界框
+					ctx.rect(
+						results[i].bbox[0], // x 座標
+						results[i].bbox[1], // y 座標
+						results[i].bbox[2], // 寬度調整為原來的 90%
+						results[i].bbox[3] // 高度調整為原來的 90%
+					);
+					ctx.lineWidth = 5; // 設置邊框寬度
+					ctx.strokeStyle = color[i % 4]; // 設置邊框顏色（循環使用顏色陣列）
+					ctx.fillStyle = color[i % 4]; // 設置文字顏色
+					ctx.stroke(); // 繪製邊框
+
+					// 在邊框上方顯示物件的置信度和類別
+					ctx.fillText(
+						results[i].score.toFixed(3) + "/" + results[i].class, // 置信度（分數）和類別
+						results[i].bbox[0], // 文字的 x 座標
+						results[i].bbox[1] - 5 // 文字的 y 座標（稍微向上偏移）
+					);
+				}
+			}
+			// 使用 requestAnimationFrame 持續進行檢測
+			requestAnimationFrame(detect);
+		}
+
+		// 主函數
+		async function app() {
+			await setupWebcam(); // 設置並啟動攝影機
+			video.play(); // 播放 video 元素
+
+			// 獲取 video 的實際寬度和高度
+			videoWidth = video.videoWidth;
+			videoHeight = video.videoHeight;
+			video.width = videoWidth; // 設置 video 元素的寬度
+			video.height = videoHeight; // 設置 video 元素的高度
+
+			// 獲取畫布元素並設置其寬度和高度
+			canvas = document.getElementById("output");
+			canvas.width = videoWidth;
+			canvas.height = videoHeight;
+
+			// 獲取畫布的 2D 繪圖上下文
+			ctx = canvas.getContext("2d");
+			ctx.font = "20px Arial"; // 設置文字的字體和大小
+
+			// 加載 COCO-SSD 模型
+			model = await cocoSsd.load();
+
+			// 開始進行物件檢測
+			detect();
+		}
+
+		// 執行主函數
+		app();
+	</script>
+</html>
