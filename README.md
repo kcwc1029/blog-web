@@ -1,5 +1,15 @@
 # 互動網頁設計
 
+```
+最後修改時間：2025.02.01
+```
+
+## 說明
+
+-   🟩 已經修改好，可以請老師做確認了。
+
+## 課程章節
+
 -   Lecture01：課程簡介與介紹
 -   Lecture02：Figma
 -   Lecture03：Figma
@@ -18,3 +28,9 @@
 -   Lecture16：Node.js
 -   Lecture17：Node.js
 -   Lecture18：🧑‍🏫 期末報告
+-
+
+## 使用方式
+
+-   每周【LectureXX：XXX】會有一份 PPT，以及裡面附上的所有程式碼
+-   每周上課，就以一個資料夾【LectureXX：XXX】為準
