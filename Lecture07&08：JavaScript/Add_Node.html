@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>甜點清單</h2>
+		<ul class="food">
+			<li class="dessert">點心 1</li>
+			<li class="dessert">點心 2</li>
+		</ul>
+		<button id="addItem">新增點心</button>
+	</body>
+	<script>
+		document.getElementById("addItem").addEventListener("click", function () {
+			let newItem = document.createElement("li"); // 創建新 <li> 元素
+			newItem.textContent = `點心 ${document.querySelectorAll(".dessert").length + 1}`;
+			newItem.classList.add("dessert"); // 加入 class 以保持一致
+			document.querySelector(".food").appendChild(newItem); // 新增至 <ul> 中
+		});
+	</script>
+</html>

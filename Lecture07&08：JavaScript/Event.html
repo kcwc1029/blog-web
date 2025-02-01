@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="outer" style="border: 2px solid red; padding: 20px">
+			<div id="middle" style="border: 2px solid green; padding: 20px">
+				<button id="inner">Click Me</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		const outer = document.getElementById("outer");
+		const middle = document.getElementById("middle");
+		const inner = document.getElementById("inner");
+
+		// TODO:
+		// 傳入 true => 捕獲階段執行監聽器
+		// 傳入 false（或預設省略） => 冒泡階段執行監聽器
+		outer.addEventListener(
+			"click",
+			() => {
+				console.log("outer 捕獲階段");
+			},
+			true
+		);
+
+		// 在冒泡階段監聽 (第三個參數為 false 或省略)
+		outer.addEventListener("click", () => {
+			console.log("outer 冒泡階段");
+		});
+
+		middle.addEventListener("click", () => {
+			console.log("middle 冒泡階段");
+		});
+
+		inner.addEventListener("click", () => {
+			console.log("inner 冒泡階段（目標元素）");
+		});
+	</script>
+</html>

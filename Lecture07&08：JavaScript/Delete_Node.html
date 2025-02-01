@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul class="menu">
+			<li class="item">🍕 披薩</li>
+			<li class="item">🍔 漢堡</li>
+			<li class="item">🍣 壽司</li>
+			<li class="item">🍩 甜甜圈</li>
+		</ul>
+
+		<button id="remove-btn">刪除最後一個項目</button>
+	</body>
+	<script>
+		// 取得按鈕元素
+		let button = document.getElementById("remove-btn");
+		// 綁定點擊事件
+		button.addEventListener("click", function () {
+			let items = document.querySelectorAll(".item");
+			// 如果還有項目，則移除最後一個
+			if (items.length > 0) {
+				let lastItem = items[items.length - 1]; // 取得最後一個元素
+				lastItem.parentNode.removeChild(lastItem); // 從父元素移除該元素
+			}
+		});
+	</script>
+</html>

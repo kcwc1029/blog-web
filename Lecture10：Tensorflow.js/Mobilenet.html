@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>MobileNet 本機圖片辨識</title>
+		<!-- 引入 TensorFlow.js 和 TensorFlow.js Models: MobileNet -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+	</head>
+	<body>
+		<h2>上傳圖片，進行物件辨識 (MobileNet)</h2>
+		<div>
+			<!-- 只接受 .jpg/.jpeg/.png 檔案 -->
+			<label for="src">選擇圖片檔:</label>
+			<input type="file" id="src" accept=".jpg, .jpeg, .png" />
+			<input type="button" value="顯示" onclick="loadImg();" />
+			<input type="button" value="預測" onclick="predict();" />
+		</div>
+		<p id="status">模型載入中，請稍候...</p>
+		<img id="img" src="./images/koala.png" width="300" alt="上傳後的圖片顯示" />
+		<!-- 用來顯示辨識結果 -->
+		<p id="result"></p>
+
+		<script>
+			let mobilenet_model;
+			const pStatus = document.getElementById("status");
+			const pResult = document.getElementById("result");
+
+			// TODO: 載入 MobileNet 模型
+			(async function init() {
+				mobilenet_model = await mobilenet.load();
+				pStatus.innerText = "模型已載入，請選擇並顯示圖片。";
+			})();
+
+			// TODO: 顯示使用者上傳的圖片
+			function loadImg() {
+				pResult.innerText = "";
+				const fileInput = document.getElementById("src");
+				// 取得使用者在 <input type="file"> 選擇的檔案
+				let file = fileInput.files[0];
+				if (!file) {
+					pStatus.innerText = "尚未選擇任何圖片檔！";
+					return;
+				}
+				pStatus.innerText = "圖片載入中...";
+
+				// 用 FileReader 將本機檔案讀為 DataURL
+				let reader = new FileReader();
+				reader.onload = function (e) {
+					const imgElement = document.getElementById("img");
+					imgElement.src = e.target.result;
+					pStatus.innerText = "圖片載入完成，按「預測」進行辨識。";
+				};
+				reader.readAsDataURL(file); // 讀取檔案
+			}
+
+			// TODO: 進行(辨識
+			async function predict() {
+				// 確定模型已載入，並有圖片
+				if (!mobilenet_model) {
+					pStatus.innerText = "模型尚未載入完成，請稍候。";
+					return;
+				}
+				const img = document.getElementById("img");
+				if (!img.src) {
+					pStatus.innerText = "尚未載入任何圖片！";
+					return;
+				}
+
+				pStatus.innerText = "模型推論中...";
+				// 使用 MobileNet 模型的 classify 方法進行推論
+				const result = await mobilenet_model.classify(img);
+				console.table(result);
+				// result 是一個陣列，預設會回傳前幾名的辨識結果，每一個物件包含:
+				// className: 可能的分類名稱
+				// probability: 機率 (0~1)
+
+				// 取前 1~3 筆結果可自行顯示
+				let displayStr = "";
+				for (let i = 0; i < result.length; i++) {
+					const className = result[i].className;
+					const prob = (result[i].probability * 100).toFixed(2);
+					displayStr += `第 ${i + 1} 名：${className} (信心度：${prob}%)<br/>`;
+				}
+
+				pResult.innerHTML = displayStr;
+				pStatus.innerText = "推論完成。";
+			}
+		</script>
+	</body>
+</html>

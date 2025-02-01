@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Car_Mpg_Prediction.html</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+	</head>
+	<body>
+		<script>
+			// TODO: 取得資料
+			let data_path = "https://storage.googleapis.com/tfjs-tutorials/carsData.json";
+			async function getData() {
+				const carsDataReq = await fetch(data_path); // 發送請求獲取資料
+				const carsData = await carsDataReq.json(); // 將回應解析為 JSON
+				// 清理資料，只保留需要的欄位並過濾掉無效值
+				const cleaned = carsData
+					.map((car) => ({
+						mpg: car.Miles_per_Gallon, // 每加侖英里數
+						horsepower: car.Horsepower, // 馬力
+					}))
+					.filter((car) => car.mpg != null && car.horsepower != null); // 過濾掉無效值
+				return cleaned;
+			}
+
+			// TODO: 創建模型
+			function createModel() {
+				const model = tf.sequential(); // 創建一個順序模型
+				model.add(tf.layers.dense({ inputShape: [1], units: 10 })); // 添加輸入層
+				model.add(tf.layers.dense({ units: 20, activation: "sigmoid" })); // 添加隱藏層
+				model.add(tf.layers.dense({ units: 20, activation: "sigmoid" })); // 添加隱藏層
+				model.add(tf.layers.dense({ units: 1 })); // 添加輸出層
+				// 編譯模型，設定損失函數和優化器
+				model.compile({ loss: "meanSquaredError", optimizer: "adam", metrics: ["mse"] });
+				tfvis.show.modelSummary({ name: "Model Summary" }, model); // 顯示模型摘要
+				return model;
+			}
+
+			// TODO: 將資料轉換為 Tensor
+			function convertToTensor(data) {
+				return tf.tidy(() => {
+					tf.util.shuffle(data); // 打亂資料順序
+					const inputs = data.map((d) => d.horsepower); // 提取馬力作為輸入
+					const labels = data.map((d) => d.mpg); // 提取 MPG 作為標籤
+					// 將資料轉換為 Tensor
+					const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+					const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
+					// 正規化輸入和標籤
+					const inputMax = inputTensor.max();
+					const inputMin = inputTensor.min();
+					const labelMax = labelTensor.max();
+					const labelMin = labelTensor.min();
+					const normalizedInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
+					const normalizedLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
+					return { inputs: normalizedInputs, labels: normalizedLabels, inputMax, inputMin, labelMax, labelMin };
+				});
+			}
+
+			// TODO: 訓練模型
+			async function trainModel(model, inputs, labels) {
+				const batchSize = 32; // 批次大小
+				const epochs = 20; // 訓練週期
+				return await model.fit(inputs, labels, {
+					batchSize,
+					epochs,
+					shuffle: true, // 每次訓練時打亂資料
+					callbacks: tfvis.show.fitCallbacks(
+						{ name: "Training Performance" },
+						["loss", "mse"], // 顯示損失和均方誤差
+						{ height: 200, callbacks: ["onEpochEnd"] }
+					),
+				});
+			}
+
+			// TODO: 獲取預測結果
+			function getPrediction(model, normalizationData) {
+				const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+				return tf.tidy(() => {
+					const input_x = tf.linspace(0, 1, 100); // 生成 0 到 1 之間的 100 個點
+					const preds = model.predict(input_x.reshape([100, 1])); // 使用模型進行預測
+					// 將正規化的資料轉換回原始範圍
+					const toOrignalX = input_x.mul(inputMax.sub(inputMin)).add(inputMin);
+					const toOrignalY = preds.mul(labelMax.sub(labelMin)).add(labelMin);
+					return [toOrignalX.dataSync(), toOrignalY.dataSync()]; // 返回預測結果
+				});
+			}
+
+			// TODO: 視覺化預測結果
+			function visualizationPrediction(originalData, predictedData) {
+				const original = originalData.map((d) => ({
+					x: d.horsepower,
+					y: d.mpg,
+				})); // 原始資料
+				const [px, py] = predictedData;
+				const predicted = Array.from(px).map((val, i) => {
+					return { x: val, y: py[i] }; // 預測資料
+				});
+				// 繪製散點圖，比較原始資料和預測結果
+				tfvis.render.scatterplot(
+					{ name: "Model Predictions vs Original Data" },
+					{ values: [original, predicted], series: ["original", "predicted"] },
+					{ xLabel: "Horsepower", yLabel: "MPG", height: 300 }
+				);
+			}
+			// TODO: main
+			async function run() {
+				const model = createModel(); // 創建模型
+				const data = await getData(); // 獲取資料
+				const tensorData = convertToTensor(data); // 將資料轉換為 Tensor
+				await trainModel(model, tensorData.inputs, tensorData.labels); // 訓練模型
+				const predictedData = getPrediction(model, tensorData); // 獲取預測結果
+				visualizationPrediction(data, predictedData); // 視覺化預測結果
+			}
+			run();
+		</script>
+	</body>
+</html>

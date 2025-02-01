@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>MobileNet+KNN</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+		<style>
+			img {
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		Cat:
+		<div id="cat">
+			<img id="cat0" src="images/cat1.jpg" />
+			<img id="cat1" src="images/cat2.jpg" />
+			<img id="cat2" src="images/cat3.jpg" />
+		</div>
+		<br />
+		Dog:
+		<div id="dog">
+			<img id="dog0" src="images/dog1.jpg" />
+			<img id="dog1" src="images/dog2.jpg" />
+			<img id="dog2" src="images/dog3.jpg" />
+		</div>
+		<hr />
+		Test1: <img id="test1" src="images/cat4.jpg" /><br />
+		<p>預測分類: <span id="result1"></span></p>
+		Test2: <img id="test2" src="images/dog4.jpg" /><br />
+		<p>預測分類: <span id="result2"></span></p>
+	</body>
+	<script>
+		let classifier = null; // KNN 分類器
+		let mobilenetModule = null; // MobileNet 模型
+
+		// TODO: 訓練 KNN 分類器
+		const trainKNN = async function () {
+			classifier = knnClassifier.create(); // 創建 KNN 分類器
+			mobilenetModule = await mobilenet.load(); // 加載 MobileNet 模型
+			let logits = null;
+
+			// 將貓的圖片轉換為張量並加入分類器
+			const cat0 = tf.browser.fromPixels(document.getElementById("cat0"));
+			logits = mobilenetModule.infer(cat0, false); // 使用 MobileNet 提取特徵
+			classifier.addExample(logits, "cat"); // 將特徵加入分類器，標記為 "cat"
+			const cat1 = tf.browser.fromPixels(document.getElementById("cat1"));
+			logits = mobilenetModule.infer(cat1, false);
+			classifier.addExample(logits, "cat");
+			const cat2 = tf.browser.fromPixels(document.getElementById("cat2"));
+			logits = mobilenetModule.infer(cat2, false);
+			classifier.addExample(logits, "cat");
+
+			// 將狗的圖片轉換為張量並加入分類器
+			const dog0 = tf.browser.fromPixels(document.getElementById("dog0"));
+			logits = mobilenetModule.infer(dog0, false); // 使用 MobileNet 提取特徵
+			classifier.addExample(logits, "dog"); // 將特徵加入分類器，標記為 "dog"
+			const dog1 = tf.browser.fromPixels(document.getElementById("dog1"));
+			logits = mobilenetModule.infer(dog1, false);
+			classifier.addExample(logits, "dog");
+			const dog2 = tf.browser.fromPixels(document.getElementById("dog2"));
+			logits = mobilenetModule.infer(dog2, false);
+			classifier.addExample(logits, "dog");
+		};
+
+		// TODO: 預測圖片分類
+		async function predict(input, output) {
+			const x = tf.browser.fromPixels(document.getElementById(input)); // 將圖片轉換為張量
+			const xlogits = mobilenetModule.infer(x, false); // 使用 MobileNet 提取特徵
+			const result = await classifier.predictClass(xlogits); // 使用 KNN 分類器進行預測
+			document.getElementById(output).innerHTML = result.label; // 顯示預測結果
+			console.log(result);
+		}
+
+		// TODO: 主程式
+		async function app() {
+			await trainKNN();
+			predict("test1", "result1");
+			predict("test2", "result2");
+		}
+		app();
+	</script>
+</html>
