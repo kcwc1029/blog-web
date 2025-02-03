@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 表單選擇器</title>
+	</head>
+	<body>
+		<form>
+			<p>
+				<label
+					>帳號：
+					<input type="text" name="username" />
+				</label>
+			</p>
+
+			<p>
+				<label
+					>密碼：
+					<input type="password" name="password" />
+				</label>
+			</p>
+
+			<p>
+				<label><input type="radio" name="gender" value="male" checked /> 男</label>
+				<label><input type="radio" name="gender" value="female" /> 女</label>
+			</p>
+
+			<p>
+				<label><input type="checkbox" name="optionA" checked /> 選項 A</label>
+				<label><input type="checkbox" name="optionB" /> 選項 B</label>
+			</p>
+
+			<p>
+				<select name="country">
+					<option value="TW" selected>台灣</option>
+					<option value="JP">日本</option>
+				</select>
+			</p>
+
+			<p>
+				<input type="submit" value="送出表單" />
+			</p>
+		</form>
+
+		<!-- 引入 jQuery CDN -->
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			$(document).ready(function () {
+				// TODO: 選擇全部 <input>，加上紅色邊框
+				$("input").css("border", "1px solid #fe4f05");
+
+				// TODO: 選擇所有 radio（加粗父層 <label>）
+				$("input:radio").parent("label").css("font-weight", "bold");
+
+				// TODO: 選擇所有 checkbox（淡藍背景）
+				$("input:checkbox").parent("label").css("background-color", "#6dc7d3");
+
+				// TODO: 選擇所有 text 欄位（預設為「請輸入姓名」）
+				$("input:text").val("請輸入姓名");
+			});
+		</script>
+	</body>
+</html>

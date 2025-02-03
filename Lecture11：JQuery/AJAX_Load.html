@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<title>AJAX load() 方法示範</title>
+
+		<!-- 載入 Bootstrap 5 -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+		<!-- 載入 jQuery（完整版本） -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+	</head>
+	<body class="bg-light">
+		<div class="container py-5">
+			<h1 class="text-center text-primary mb-4">AJAX <code>load()</code> 方法</h1>
+			<p class="text-center">載入皮卡丘資料：https://pokeapi.co/api/v2/pokemon/pikachu</p>
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<!-- 資料顯示區 -->
+					<div id="pokemon-info" class="border p-3 bg-white text-dark rounded shadow" style="height: 20rem; overflow: scroll">
+						<p class="text-muted">寶可夢資訊將載入這裡</p>
+					</div>
+
+					<!-- 載入按鈕 -->
+					<div class="text-center mt-3">
+						<button id="load-btn" class="btn btn-primary">載入皮卡丘資料</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- 載入 Bootstrap JS（互動元件需要） -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#load-btn").click(function () {
+				// TODO: 使用 AJAX `load()` 方法載入 API 資料
+				$("#pokemon-info").load("https://pokeapi.co/api/v2/pokemon/pikachu", function (response, status, xhr) {
+					if (status === "error") {
+						$("#pokemon-info").html('<p class="text-danger fw-bold">❌ 無法載入資料</p>');
+					} else {
+						// 轉換成 JSON 格式並格式化顯示
+						const formattedData = JSON.stringify(JSON.parse(response), null, 4);
+						$("#pokemon-info").html(`<pre class="m-0">${formattedData}</pre>`);
+					}
+				});
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 動畫與特效</title>
+		<!-- 引入 Bootstrap 5 CDN -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body class="bg-light">
+		<div class="container text-center my-5">
+			<h1 class="mb-4">jQuery 動畫與特效</h1>
+			<!-- 方塊區 -->
+			<div class="box bg-info m-2 fw-bold rounded-4 w-100 p-2" id="box1">Box 1</div>
+			<!-- 控制按鈕 -->
+			<div class="mt-3">
+				<button id="hideButton" class="btn btn-danger">隱藏 Box</button>
+				<button id="showButton" class="btn btn-success">顯示 Box</button>
+				<button id="toggleButton" class="btn btn-primary">切換 Box</button>
+			</div>
+		</div>
+	</body>
+	<!-- 引入 jQuery CDN -->
+	<script
+		src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+		integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+		crossorigin="anonymous"
+	></script>
+	<script>
+		$(document).ready(function () {
+			// 隱藏 Box
+			$("#hideButton").click(function () {
+				$("#box1").hide(600); // 600毫秒內淡出消失
+			});
+
+			// 顯示 Box
+			$("#showButton").click(function () {
+				$("#box1").show(600); // 600毫秒內淡入出現
+			});
+
+			// 切換 Box
+			$("#toggleButton").click(function () {
+				$("#box1").toggle(600); // 600毫秒內切換顯示/隱藏
+			});
+		});
+	</script>
+</html>

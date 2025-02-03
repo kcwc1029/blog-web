@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 狀態選擇器</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="可輸入(啟用)" class="textInput" /><br /><br />
+			<input type="text" placeholder="已禁用" class="textInput" disabled /><br /><br />
+			<label><input type="checkbox" name="option" value="A" checked /> 選項A (已勾選)</label><br />
+			<label><input type="checkbox" name="option" value="B" /> 選項B (未勾選)</label><br />
+			<label><input type="radio" name="gender" value="male" checked /> 男 (已勾選)</label><br />
+			<label><input type="radio" name="gender" value="female" /> 女 (未勾選)</label><br />
+		</form>
+
+		<!-- 引入 jQuery CDN -->
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			// TODO: 下jQuery
+			$(document).ready(function () {
+				// 一般來說會用操作class的方式，示範方便直接寫css
+				// 選擇所有啟用的 <input>
+				// $("input:enabled").addClass("enabled-input");
+				$("input:enabled").css({
+					border: "2px solid green",
+					background: "#e5ffe5",
+				});
+
+				// 選擇所有禁用的 <input>
+				$("input:disabled").css({
+					border: "2px solid #aaa",
+					background: "#eee",
+					color: "#444",
+				});
+
+				// 已選取的 (checkbox 或 radio)
+				// $("input:checked").parent("label").addClass("checked-option");
+				$("input:checked").parent("label").css({
+					background: "#ffd700", // 金黃色背景
+					"font-weight": "bold", // 正確：設定為粗體
+				});
+
+				// 未選取的 (checkbox 或 radio)
+				// $("input:not(:checked)").parent("label").addClass("unchecked-option");
+				$("input:not(:checked)").parent("label").css({
+					color: "#ccc",
+				});
+			});
+		</script>
+	</body>
+</html>

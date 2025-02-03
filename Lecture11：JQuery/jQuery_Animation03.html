@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 滑動特效 - 原生CSS</title>
+
+		<!-- 原生 CSS 樣式 -->
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f8f9fa;
+				text-align: center;
+			}
+
+			h1 {
+				margin-bottom: 20px;
+			}
+
+			/* 這是滑動的方塊 */
+			.box {
+				width: 200px;
+				height: 100px;
+				background-color: lightgreen;
+				color: white;
+				font-size: 20px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 100px;
+				border-radius: 6px;
+				margin: 20px auto; /* 水平置中 */
+				display: none; /* 預設隱藏 */
+			}
+
+			/* 按鈕樣式 */
+			.btn {
+				padding: 10px 15px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+				margin: 5px;
+				border-radius: 5px;
+			}
+
+			.btn-primary {
+				background-color: #007bff;
+				color: white;
+			}
+
+			.btn-danger {
+				background-color: #dc3545;
+				color: white;
+			}
+
+			.btn-warning {
+				background-color: #ffc107;
+				color: black;
+			}
+
+			.btn:hover {
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jQuery 滑動特效</h1>
+
+		<!-- 目標方塊 -->
+		<div id="box1" class="box">Box 1</div>
+
+		<!-- 控制按鈕 -->
+		<button id="slideDownButton" class="btn btn-primary">滑動顯示</button>
+		<button id="slideUpButton" class="btn btn-danger">滑動隱藏</button>
+		<button id="slideToggleButton" class="btn btn-warning">切換滑動顯示/隱藏</button>
+	</body>
+	<!-- jQuery 完整版（確保動畫可用） -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function () {
+			// 滑動顯示
+			$("#slideDownButton").click(function () {
+				$("#box1").slideDown(600);
+			});
+
+			// 滑動隱藏
+			$("#slideUpButton").click(function () {
+				$("#box1").slideUp(600);
+			});
+
+			// 切換滑動顯示/隱藏
+			$("#slideToggleButton").click(function () {
+				$("#box1").slideToggle(600);
+			});
+		});
+	</script>
+</html>

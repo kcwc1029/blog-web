@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 結構選擇器</title>
+		<style>
+			.highlight {
+				background-color: yellow;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>項目一</li>
+			<li>項目二</li>
+			<li>項目三</li>
+		</ul>
+		<p>
+			這是一段包含
+			<a href="#">連結A</a> 與 <a href="#">連結B</a> 的段落文字。
+		</p>
+
+		<img src="" alt="示意圖" />
+		<p>這是跟在 <img /> 後面的第一個段落。</p>
+		<p>這是位在後面更下方的段落。</p>
+	</body>
+	<!-- 引入 jQuery CDN -->
+	<script
+		src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+		integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+		crossorigin="anonymous"
+	></script>
+
+	<script>
+		$(document).ready(function () {
+			// TODO: 後代選擇器：選取 <ul> 內的所有 <li> 元素，文字改為藍色
+			$("ul li").css("color", "blue");
+
+			// TODO: 後代選擇器：選取所有 <p> 元素中的 <a> 連結，加入 highlight 樣式
+			$("p a").addClass("highlight");
+
+			// TODO: 相鄰兄弟選擇器：選取緊貼在 <img> 後面的那個 <p>
+			$("img + p").css("font-weight", "bold");
+
+			// TODO: 一般兄弟選擇器：選取與 <img> 同層級、之後出現的所有 <p>
+			$("img ~ p").css("color", "red");
+		});
+	</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery 淡入淡出特效</title>
+		<!-- 引入 Bootstrap 5 CDN -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body class="bg-light">
+		<div class="container my-5">
+			<h1 class="text-center mb-4">jQuery 淡入淡出特效</h1>
+
+			<div
+				id="box1"
+				class="text-white d-flex align-items-center justify-content-center fs-4 fw-bold mx-auto my-3 rounded-4"
+				style="width: 200px; height: 100px; background-color: lightcoral"
+			>
+				Box 1
+			</div>
+			<div class="text-center">
+				<button id="fadeInButton" class="btn btn-success me-2">淡入 Box</button>
+				<button id="fadeOutButton" class="btn btn-danger me-2">淡出 Box</button>
+				<button id="fadeToggleButton" class="btn btn-primary me-2">切換淡入淡出</button>
+				<button id="fadeToButton" class="btn btn-warning">透明度調整 (50%)</button>
+			</div>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS (若需使用更進階的互動組件) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// 淡入效果
+			$("#fadeInButton").click(function () {
+				$("#box1").fadeIn(600);
+			});
+
+			// 淡出效果
+			$("#fadeOutButton").click(function () {
+				$("#box1").fadeOut(600);
+			});
+
+			// 切換淡入 / 淡出
+			$("#fadeToggleButton").click(function () {
+				$("#box1").fadeToggle(600);
+			});
+
+			// 透明度調整 (50%)
+			$("#fadeToButton").click(function () {
+				$("#box1").fadeTo(600, 0.5);
+			});
+		});
+	</script>
+</html>

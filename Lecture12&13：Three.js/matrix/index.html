@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Three.js 渲染</title>
+	</head>
+	<body>
+		<main></main>
+		<script type="module">
+			import * as THREE from "https://unpkg.com/three@latest/build/three.module.js";
+
+			// TODO: 建立scene
+			const scene = new THREE.Scene();
+			// TODO: 建立camera
+			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+			camera.position.set(5, 0, 15); // Camera 身為鏡頭，有位置屬性，設定在Z軸即可。
+			// TODO: 建立renderer
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight); // 渲染器負責投影畫面在螢幕上，會需要寬高
+			document.body.appendChild(renderer.domElement); // 渲染器會產生canvas物件，我們在html的body放置它
+			// TODO: 建立物體
+			const geometry = new THREE.BoxGeometry(1, 1, 1);
+			const material = new THREE.MeshNormalMaterial();
+			const cube = new THREE.Mesh(geometry, material);
+			scene.add(cube);
+
+			// TODO: 建立旋轉矩陣
+			const rotateMatrix = new THREE.Matrix4().makeRotationY(Math.PI / 4);
+			// TODO: 建立縮放矩陣
+			const scaleMatrix = new THREE.Matrix4().makeScale(2, 2, 2);
+			// TODO: 建立位移矩陣
+			const translationMatrix = new THREE.Matrix4().makeTranslation(5, 0, 0);
+
+			// TODO: 結合矩陣
+			const combineMatrix = new THREE.Matrix4();
+			combineMatrix.multiplyMatrices(translationMatrix, rotateMatrix); // 先位移，再旋轉
+			combineMatrix.multiply(scaleMatrix); // 最後縮放
+			// TODO: 將矩陣位置應用給mesh
+			cube.applyMatrix4(combineMatrix);
+
+			// 每一幀執行
+			function animate() {
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
+			}
+			animate();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>jQuery 選擇器教學</title>
+	</head>
+	<body>
+		<h1>這是標題</h1>
+		<p id="mainContent">這是帶有 ID 的段落文字。</p>
+		<p class="intro">這是帶有 class 屬性的段落文字。</p>
+		<div>這是普通的 div 區塊。</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			// TODO: 等待 DOM 讀取完後再執行
+			$(document).ready(function () {
+				// TODO: 全域選擇器：將所有元素文字顏色設為紅色
+				$("*").css("color", "red");
+
+				// TODO: 類型選擇器：將所有 <h1> 的字體大小設為 32px
+				$("h1").css("font-size", "3rem");
+
+				// TODO: ID 選擇器：將 ID 為 mainContent 的元素背景色設為淡黃色
+				$("#mainContent").css("background-color", "aquamarine");
+
+				// TODO: 類別選擇器：將 class 為 intro 的段落文字改為粗體加底線
+				$(".intro").css({
+					"font-weight": "bold",
+					"text-decoration": "underline",
+				});
+			});
+		</script>
+	</body>
+</html>

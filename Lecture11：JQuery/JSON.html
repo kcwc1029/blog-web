@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<title>AJAX 與 JSON 轉換</title>
+		<style></style>
+	</head>
+	<body>
+		<h1>AJAX 與 JSON 轉換</h1>
+		<div class="code-box">
+			<b>JavaScript 物件:</b>
+			<pre id="jsObject"></pre>
+		</div>
+		<button class="btn btn-primary" onclick="convertToJson()">轉換為 JSON</button>
+		<button class="btn btn-success" onclick="convertToObject()">轉回 JavaScript 物件</button>
+		<div class="output-box">
+			<b>JSON 字串:</b>
+			<pre id="jsonString"></pre>
+		</div>
+		<div class="output-box">
+			<b>轉換回的 JavaScript 物件:</b>
+			<pre id="jsConverted"></pre>
+		</div>
+	</body>
+	<script>
+		// 定義 JavaScript 物件
+		const person = {
+			name: "吉伊卡哇",
+			age: 25,
+			email: "example@gmail.com",
+			skills: ["HTML", "CSS", "JavaScript"],
+		};
+
+		// TODO: 使用console.log展示
+		// JavaScript 物件轉JSON 字串
+		const jsonString = JSON.stringify(person);
+		console.log(jsonString);
+		// JSON 字串轉JavaScript 物件
+		const parsedObject = JSON.parse(jsonString);
+		console.log(parsedObject);
+
+		// TODO: 用前端方式顯示
+		// 顯示 JavaScript 物件
+		document.getElementById("jsObject").innerText = JSON.stringify(person, null, 4);
+
+		// TODO: 轉換為 JSON 字串
+		function convertToJson() {
+			document.getElementById("jsonString").innerText = jsonString;
+		}
+
+		// TODO: 轉換 JSON 字串回 JavaScript 物件
+		function convertToObject() {
+			document.getElementById("jsConverted").innerText = `姓名: ${parsedObject.name}\n` + `技能: ${parsedObject.skills.join(", ")}`;
+		}
+	</script>
+</html>
