@@ -1,7 +1,7 @@
 # 互動網頁設計
 
 ```
-最後修改時間：2025.02.03
+最後修改時間：2025.02.04
 ```
 
 ## 說明
@@ -11,7 +11,7 @@
 ## 課程章節
 
 -   Lecture01：課程簡介與介紹
--   Lecture02：🟩Figma
+-   Lecture02：🟩 Figma
 -   Lecture03：🟩 Figma
 -   Lecture04：🟩 HTML
 -   Lecture05：🟩 CSS
@@ -22,13 +22,17 @@
 -   Lecture10：🟩 TensorFlow.js
 -   Lecture11：🟩 JQuery
 -   Lecture12：🟩 Three.js
--   Lecture13：🟩Three.js
--   Lecture14：Vue.js
+-   Lecture13：🟩 Three.js
+-   Lecture14：🟩 Vue.js
 -   Lecture15：Vue.js
 -   Lecture16：Node.js
 -   Lecture17：Node.js
 -   Lecture18：🧑‍🏫 期末報告
--
+
+## Lab
+
+-   Lab01：https://youtu.be/aSSk1PbCZgw
+-   Lab02：https://youtu.be/iBzOjfVPbas
 
 ## 使用方式
 
