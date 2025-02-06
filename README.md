@@ -24,7 +24,7 @@
 -   Lecture12：🟩 Three.js
 -   Lecture13：🟩 Three.js
 -   Lecture14：🟩 Vue.js
--   Lecture15：Vue.js
+-   Lecture15：🟩 Vue.js
 -   Lecture16：Node.js
 -   Lecture17：Node.js
 -   Lecture18：🧑‍🏫 期末報告
@@ -33,6 +33,7 @@
 
 -   Lab01：https://youtu.be/aSSk1PbCZgw
 -   Lab02：https://youtu.be/iBzOjfVPbas
+-   Lab03：https://youtu.be/B8fNlzJEXRQ
 
 ## 使用方式
 
