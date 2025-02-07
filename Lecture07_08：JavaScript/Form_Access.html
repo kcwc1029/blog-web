@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>存取表單內容</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body class="bg-light p-4">
+		<div class="container bg-white p-4 rounded shadow-sm">
+			<h1 class="text-center text-primary">存取表單內容</h1>
+
+			<!-- 文字輸入框 -->
+			<div class="mb-3">
+				<label for="name" class="form-label fw-bold fs-5">姓名：</label>
+				<input type="text" id="name" class="form-control" />
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label fw-bold fs-5">密碼：</label>
+				<input type="password" id="password" class="form-control" />
+			</div>
+
+			<!-- 單選按鈕 -->
+			<p class="fw-bold fs-5">選擇性別：</p>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" value="男" id="male" />
+				<label class="form-check-label" for="male">男</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" value="女" id="female" />
+				<label class="form-check-label" for="female">女</label>
+			</div>
+
+			<!-- 複選框 -->
+			<p class="fw-bold fs-5 mt-3">興趣：</p>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" name="hobby" value="運動" id="sport" />
+				<label class="form-check-label" for="sport">運動</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" name="hobby" value="閱讀" id="reading" />
+				<label class="form-check-label" for="reading">閱讀</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" name="hobby" value="音樂" id="music" />
+				<label class="form-check-label" for="music">音樂</label>
+			</div>
+
+			<!-- 下拉選單 -->
+			<div class="mb-3 mt-3">
+				<label for="country" class="form-label fw-bold fs-5">選擇國家：</label>
+				<select id="country" class="form-select">
+					<option value="台灣">台灣</option>
+					<option value="美國">美國</option>
+					<option value="日本">日本</option>
+				</select>
+			</div>
+			<!-- 按鈕與回傳欄位 -->
+			<button class="btn btn-primary w-100" onclick="showResult()">提交</button>
+			<div class="output border rounded mt-3 p-3 bg-light" id="output"></div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+	<script>
+		// TODO: button 觸發
+		const showResult = () => {
+			// TODO: 取得文字欄
+			let name = document.getElementById("name").value;
+			let password = document.getElementById("password").value;
+			// TODO: 取得radiobox的值(name：視為群組名稱)
+			let genderElements = document.getElementsByName("gender");
+			let gender = "未選擇";
+			for (let i = 0; i < genderElements.length; i++) {
+				if (genderElements[i].checked) {
+					gender = genderElements[i].value;
+				}
+			}
+			// TODO: 取得checkbox的值(name：視為群組名稱)
+			let hobbyElements = document.getElementsByName("hobby");
+			let hobbies = [];
+			for (let i = 0; i < hobbyElements.length; i++) {
+				if (hobbyElements[i].checked) {
+					hobbies.push(hobbyElements[i].value);
+				}
+			}
+			// TODO: 取得selected的值(name：視為群組名稱)
+			let country = document.getElementById("country").value;
+
+			// TODO: 回傳值
+			let outputDiv = document.getElementById("output");
+			outputDiv.innerHTML = `
+	<strong>姓名：</strong> ${name} <br>
+	<strong>密碼：</strong> ${password} <br>
+	<strong>性別：</strong> ${gender} <br>
+	<strong>興趣：</strong> ${hobbies.join(", ")} <br>
+	<strong>國家：</strong> ${country}
+`;
+		};
+	</script>
+</html>

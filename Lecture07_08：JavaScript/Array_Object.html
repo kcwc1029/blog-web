@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+	<script>
+		// TODO: 宣告陣列;
+		let arr1 = [1, 2, 3]; // 使用中括號宣告
+		let arr2 = new Array(5); // 建立一個長度為 5 的陣列
+		let arr3 = Array.of(10, 20, 30); // 透過 Array.of 建立陣列
+
+		// TODO: 取得與修改陣列元素
+		let fruits = ["apple", "banana", "cherry"];
+		console.log(fruits[1]); // banana
+		fruits[1] = "grape";
+		console.log(fruits); // ["apple", "grape", "cherry"]
+
+		// TODO: 陣列的解構賦值
+		let [name1, name2, name3] = ["Yuri", "Zoe", "Bob"];
+		console.log(name1, name2, name3); // Yuri Zoe Bob
+
+		let [first, second, ...others] = ["A", "B", "C", "D", "E"];
+		console.log(first, second, others); // A B ["C", "D", "E"]
+
+		// TODO: 陣列--新增與刪除元素
+		let numbers = [1, 2, 3];
+		numbers.push(4); // 在尾部新增
+		numbers.unshift(0); // 在開頭新增
+		numbers.pop(); // 移除最後一個元素
+		numbers.shift(); // 移除第一個元素
+		console.log(numbers); // [1, 2]
+
+		// TODO: 切片與取代
+		let arr = ["A", "B", "C", "D"];
+		console.log(arr.slice(1, 3)); // ["B", "C"]
+		arr.splice(1, 2, "X", "Y"); // 替換 B 和 C
+		console.log(arr); // ["A", "X", "Y", "D"]
+
+		// TODO: 陣列遍歷--forEach()
+		let data = ["A", "B", "C"];
+		data.forEach((item, index) => {
+			console.log(`${index}: ${item}`);
+		});
+
+		// TODO: 陣列遍歷--map()
+		let numbers = [1, 2, 3];
+		let squared = numbers.map((num) => num * num);
+		console.log(squared); // [1, 4, 9]
+
+		// TODO: 陣列遍歷--map()
+		let words = ["apple", "banana", "cherry", "date"];
+		let filtered = words.filter((word) => word.length > 5);
+		console.log(filtered); // ["banana", "cherry"]
+
+		// TODO: 陣列遍歷--reduce()
+		let nums = [1, 2, 3, 4];
+		let sum = nums.reduce((acc, cur) => acc + cur, 0);
+		console.log(sum); // 10
+
+		// TODO: 排序sort();
+		let arr = [3, 1, 4, 1, 5, 9];
+		arr.sort((a, b) => a - b);
+		console.log(arr); // [1, 1, 3, 4, 5, 9]
+
+		// TODO: 反轉reverse();
+		let arr = [1, 2, 3, 4];
+		arr.reverse();
+		console.log(arr); // [4, 3, 2, 1]
+
+		// TODO: 陣列扁平化 flat()
+		let nested = [1, [2, [3, 4]], 5];
+		console.log(nested.flat(2)); // [1, 2, 3, 4, 5]
+
+		// TODO: 陣列的搜尋與檢查
+		// includes ()
+		let list = ["apple", "banana", "cherry"];
+		console.log(list.includes("banana")); // true
+		console.log(list.includes("grape")); // false
+		// find()與findIndex()
+		let people = [
+			{ name: "Alice", age: 25 },
+			{ name: "Bob", age: 30 },
+			{ name: "Charlie", age: 35 },
+		];
+		console.log(people.find((person) => person.age > 28)); // { name:
+		console.log(people.findIndex((person) => person.age > 28)); // 1
+
+		// TODO: 迭代器方法
+		// keys(), values(), entries()
+		let letters = ["a", "b", "c"];
+		let keyIterator = letters.keys();
+		let valIterator = letters.values();
+		let entIterator = letters.entries();
+		for (let key of keyIterator) console.log(key); // 0, 1, 2
+		for (let val of valIterator) console.log(val); // a, b, c
+		for (let [index, val] of entIterator) console.log(index, val); // 0 a, 1 b, 2 c
+	</script>
+</html>
