@@ -1,0 +1,169 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="第1頁" id="Fg5md_jTh0c6kftfqWvU">
+    <mxGraphModel dx="1646" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="STbQsHNFfEks6Abbi6AS-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-1" target="STbQsHNFfEks6Abbi6AS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-1" value="public/index.html" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="320" y="283" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-2" value="&amp;lt;div id =&quot;#app&quot;&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fceadb, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="470" y="283" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Times New Roman;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-4" target="STbQsHNFfEks6Abbi6AS-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-4" target="STbQsHNFfEks6Abbi6AS-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-4" value="src/main.js" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="320" y="350" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-5" value="createApp(&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;App&lt;/font&gt;).mount(&#39;#app&#39;)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fceadb, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="520" y="355" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-7" value="主要掛載" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="450" y="347" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Times New Roman;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-8" target="STbQsHNFfEks6Abbi6AS-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-8" value="src/&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;App.vue&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="320" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-9" value="&amp;lt;templete&amp;gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="510" y="404" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Times New Roman;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-10" target="STbQsHNFfEks6Abbi6AS-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-10" value="&amp;lt;script&amp;gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="510" y="425" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-11" value="&amp;lt;style&amp;gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="510" y="445" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-13" value="export default {...}" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="620" y="425" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-17" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="-13" y="1100" width="283" height="141.06" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-20" target="STbQsHNFfEks6Abbi6AS-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-20" value="main file&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="187" y="283" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-21" target="STbQsHNFfEks6Abbi6AS-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-21" value="main js" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="187" y="350" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-22" value="主要撰寫的地方" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="187" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-27" value="&lt;font face=&quot;Times New Roman&quot;&gt;FriendCard.vue&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-30" target="STbQsHNFfEks6Abbi6AS-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-30" value="&lt;div&gt;在app上面掛component&lt;/div&gt;&lt;div&gt;app.component(&quot;html tag name&quot;, component名稱);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#9fdaf5, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="350" width="263" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-31" target="STbQsHNFfEks6Abbi6AS-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-31" value="&lt;div&gt;&amp;lt;templete&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;script&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#9fdaf5, #ededed);align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="445" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-37" value="&lt;font face=&quot;Times New Roman&quot;&gt;Use&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="475" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-38" value="&lt;font face=&quot;Times New Roman&quot;&gt;Include&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="415" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-40" value="&lt;div&gt;&amp;lt;template&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;section&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;ul&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;friend-card v-for=&quot;i in friends&quot; :key=&quot;i.id&quot; :friend=&quot;i&quot; @update-friend=&quot;toggleUpdateFriend&quot;&amp;gt;&amp;lt;/friend-card&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;/ul&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;/section&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/template&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="600" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-41" value="&lt;div&gt;&amp;lt;script setup&amp;gt;&lt;/div&gt;&lt;div&gt;const friends = ref([...]) // 父原件資料&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// 父元件處理方法&lt;/div&gt;&lt;div&gt;const toggleUpdateFriend = (id) =&amp;gt; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; const friend = friends.value.find((f) =&amp;gt; f.id === id);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (friend) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; friend.name += &quot;!!!&quot;; // 更新對應 name&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-42" value="&lt;div&gt;&amp;lt;template&amp;gt;&lt;/div&gt;&lt;div&gt;// 父原件資料給子原件&lt;/div&gt;&lt;div&gt;&amp;lt;h2 class=&quot;card-title h4 text-primary&quot;&amp;gt;{{ friend.name }}&amp;lt;/h2&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;//子原件子元件傳給父元件&lt;/div&gt;&lt;div&gt;&amp;lt;button class=&quot;btn btn-warning mb-2&quot; @click=&quot;editFriend(friend.id)&quot;&amp;gt;資料增加&quot;!!!&quot;&amp;lt;/button&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/template&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;script setup&amp;gt;&lt;/div&gt;&lt;div&gt;// 定義 emit&lt;/div&gt;&lt;div&gt;const emit = defineEmits([&quot;update-friend&quot;]);&lt;/div&gt;&lt;div&gt;const editFriend = (id) =&amp;gt; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; emit(&quot;update-friend&quot;, id); // 正確傳遞 friend.id 給父元件&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="350" y="720" width="470" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-43" value="&lt;font face=&quot;Times New Roman&quot;&gt;App.vue&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="560" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-44" value="&lt;font face=&quot;Times New Roman&quot;&gt;component&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="472" y="694" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-45" target="STbQsHNFfEks6Abbi6AS-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-45" value="// 建立data&lt;div&gt;const &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;shareData &lt;/font&gt;= ref(&quot;烏薩奇&quot;)&lt;/div&gt;&lt;div&gt;provide(&quot;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 127, 255), rgb(255, 255, 255));&quot;&gt;shareData&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(255, 0, 0), rgb(255, 255, 255));&quot;&gt;shareData&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#ffe5ec, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry y="1010" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-47" target="STbQsHNFfEks6Abbi6AS-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-47" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fcdfc0, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="210" y="1010" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-48" target="STbQsHNFfEks6Abbi6AS-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-48" value="&lt;div&gt;&amp;lt;template&amp;gt;&lt;/div&gt;&lt;div&gt;顯示資料{{&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;shareData&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/template&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;script&amp;gt;&lt;/div&gt;&lt;div&gt;const&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;shareData = inject(&quot;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 127, 255), rgb(255, 255, 255));&quot;&gt;shareData&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/script&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="307" y="990" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-54" value="&lt;font face=&quot;Times New Roman&quot;&gt;ChildB.vue&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="308" y="964" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-57" value="&lt;font face=&quot;Times New Roman&quot;&gt;ChildA.vue&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="983" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-58" value="&lt;font face=&quot;Times New Roman&quot;&gt;App.vue&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry y="983" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-59" target="STbQsHNFfEks6Abbi6AS-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-59" value="&lt;div&gt;// 增加router&lt;/div&gt;import { createRouter, createWebHistory } from &quot;vue-router&quot;;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// 把component引入&lt;/div&gt;&lt;div&gt;&lt;div&gt;import &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;TeamPage &lt;/font&gt;from &quot;./components/TeamPage.vue&quot;;&lt;/div&gt;&lt;div&gt;import &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;UserPage &lt;/font&gt;from &quot;./components/UserPage.vue&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// 建立router&lt;/div&gt;&lt;div&gt;&lt;div&gt;const &lt;font style=&quot;color: rgb(255, 128, 0);&quot;&gt;router &lt;/font&gt;= createRouter({&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; history: createWebHistory(),&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; routes: [&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; { path: &quot;/&lt;font style=&quot;color: rgb(0, 127, 255);&quot;&gt;teampage&lt;/font&gt;&quot;, component: &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;TeamPage &lt;/font&gt;},&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; { path: &quot;/&lt;font style=&quot;color: rgb(0, 127, 255);&quot;&gt;userpage&lt;/font&gt;&quot;, component: &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;UserPage &lt;/font&gt;},&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; ],&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; linkActiveClass: &quot;router-link-activate&quot;,&lt;/div&gt;&lt;div&gt;});&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=#dae8fc;align=left;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="1300" width="310" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-60" value="&lt;font face=&quot;Times New Roman&quot;&gt;main.js&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="1274" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="STbQsHNFfEks6Abbi6AS-61" target="STbQsHNFfEks6Abbi6AS-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-61" value="&lt;div&gt;&lt;div&gt;const app = createApp(App);&lt;/div&gt;&lt;div&gt;// 串一般的component&lt;/div&gt;&lt;div&gt;app.component(&quot;nav-page&quot;, NavPage); // 導覽列(無論哪個頁面都要有)&lt;/div&gt;&lt;div&gt;app.use(&lt;span style=&quot;color: rgb(255, 128, 0);&quot;&gt;router&lt;/span&gt;);&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;// 把router串在app身上&lt;/span&gt;&lt;/div&gt;&lt;div&gt;app.mount(&quot;#app&quot;);&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#fbeca2, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="297" y="1460" width="273" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-63" value="&lt;div&gt;&amp;lt;template&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;nav-page&amp;gt;&amp;lt;/nav-page&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/template&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fillColor=light-dark(#ffe5ec, #ededed);align=left;" vertex="1" parent="1">
+          <mxGeometry x="297" y="1360" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-65" value="&lt;font face=&quot;Times New Roman&quot;&gt;main.js&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="298" y="1435" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STbQsHNFfEks6Abbi6AS-66" value="&lt;font face=&quot;Times New Roman&quot;&gt;app.vue&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="297" y="1333" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

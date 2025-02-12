@@ -36,9 +36,17 @@
 
 ## Lab
 
+-   繳交方式：每一個 Lab 都有在裡面註記說，在哪個地方打上姓名學號
+    -   截圖後把圖片上傳至 moodle(圖片名稱：學號\_Lab0X.jpeg)
+    -   Lab01-Lab03 繳交時間為第一周-期中考
+    -   Lab04-Lab05 繳交時間為期中考-期末考
 -   Lab01：https://youtu.be/aSSk1PbCZgw
 -   Lab02：https://youtu.be/iBzOjfVPbas
 -   Lab03：https://youtu.be/B8fNlzJEXRQ
+
+## 注意事項
+
+-   若有其他疑問，可以至感知學習與人機合作實驗室詢問。
 
 <p align="center">
   Copyright © 2025 感知學習與人機合作實驗室
