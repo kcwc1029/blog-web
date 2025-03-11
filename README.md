@@ -1,8 +1,6 @@
-# 互動網頁設計
+# 互動式網頁設計
 
 TA 寫得很辛苦，能不能幫忙點個右上角的 ⭐ 支持一下(霸脫 QQ)
-
-📅 最後修改時間：2025.02.24
 
 ## 配分
 
@@ -17,6 +15,7 @@ TA 寫得很辛苦，能不能幫忙點個右上角的 ⭐ 支持一下(霸脫 Q
 -   Lecture02：🟩 Figma
 -   Lecture03：🟩 Figma
 -   Lecture04：🟩 HTML
+    -   影片：https://youtu.be/avxg-6JFl8o
 -   Lecture05：🟩 CSS
 -   Lecture06：🟩 Bootstrap
 -   Lecture07：🟩 Javascritp01

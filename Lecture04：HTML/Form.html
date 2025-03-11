@@ -50,16 +50,18 @@
 		<form method="post" action="">
 			<!-- PartA -->
 			<input type="hidden" name="表格分類" value="我是A表格" />
-			<p>姓名：<input type="text" name="userName" id="userName" placeholder="請輸入姓名" /></p>
+			<p>姓名：<input type="text" name="userName" id="userName" value="請輸入姓名" readonly /></p>
 			<p>email：<input type="email" name="userMail" id="userMail" placeholder="請輸入mail" /></p>
 			<p>身分證字號：<input type="password" name="Identification" id="Identification" placeholder="請輸入身分證字號" /></p>
 			<p>
-				性別： <input type="radio" name="userSex" id="userSex1" value="sex01" />女
-				<input type="radio" name="userSex" id="userSex2" value="sex02" />哥布林 <input type="radio" name="userSex" id="userSex3" value="sex03" />其他
+				性別：
+				<input type="radio" name="userSex" id="userSex1" value="sex01" />女 <input type="radio" name="userSex" id="userSex2" value="sex02" />哥布林
+				<input type="radio" name="userSex" id="userSex3" value="sex03" />其他
 			</p>
 			<!-- PartB -->
 			<p>
-				乙組系上有哪些老師： <input type="checkbox" name="teacher[]" id="teacher1" value="黃悅民" checked />黃悅民
+				乙組系上有哪些老師：
+				<input type="checkbox" name="teacher[]" id="teacher1" value="黃悅民" checked />黃悅民
 				<input type="checkbox" name="teacher[]" id="teacher2" value="侯廷偉" />侯廷偉
 				<input type="checkbox" name="teacher[]" id="teacher3" value="賴瑾峰" />賴瑾峰
 				<input type="checkbox" name="teacher[]" id="teacher4" value="陳世曄" />陳世曄
@@ -83,7 +85,8 @@
 			</p>
 			<!-- PartD -->
 			<p>
-				輸入日期：<br />
+				輸入日期：
+				<br />
 				<input type="date" name="date" id="date" />
 			</p>
 
@@ -92,6 +95,10 @@
 				<input type="time" name="time" id="time" />
 			</p>
 
+			<p>
+				測試用
+				<input type="number" max="3" min="-2" step="2" />
+			</p>
 			<input type="submit" value="submit" />
 			<input type="reset" value="reset" />
 		</form>
