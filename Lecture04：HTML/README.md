@@ -1,4 +1,4 @@
-## HTML 的基本結構
+## 1. HTML 的基本結構
 
 -   `<html>`元素：標示 HTML 文件的開始與結束，屬於全域屬性(global attribute)。
 -   `<head>`元素：用來設定 HTML 文件的標題。
@@ -22,28 +22,28 @@
 </html>
 ```
 
-### 標籤（Tag）
+### 1.1. 標籤（Tag）
 
 -   標籤是元素的組成部分，分為開始標籤與結束標籤
 
 ![upgit_20250227_1740634043.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250227_1740634043.png)
 
-### 屬性(Attribute)
+### 1.2. 屬性(Attribute)
 
 -   屬性用於為 HTML 元素提供額外的資訊或特性。
 -   屬性通常放在開始標籤中，並以「屬性名=屬性值」的形式呈現
     ![upgit_20250227_1740634014.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250227_1740634014.png)
     ![upgit_20250227_1740634102.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250227_1740634102.png)
 
-### 推薦的 vscode 小工具
+### 1.3. 推薦的 vscode 小工具
 
 ![upgit_20250227_1740634135.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250227_1740634135.png)
 
-### [Lab：撰寫第一個 HTML](./First_HTML.html)
+### 1.4. [Lab：撰寫第一個 HTML](./First_HTML.html)
 
-### [Lab：五秒後跳轉 google](./Redirect_Google.html)
+### 1.5. [Lab：五秒後跳轉 google](./Redirect_Google.html)
 
-## 文件元素
+## 2. 文件元素
 
 -   標題元素：h1-h6
 -   段落文字：p
@@ -51,9 +51,9 @@
     -   用於將 HTML 文件中的某個範圍的內容和元素群組成一個區塊，方便進行整體操作
     -   本身沒有語義意義，僅作為一個容器使用，用於結構化佈局
 
-### [Lab：示範文件元素](./H1_P_Div.html)
+### 2.1. [Lab：示範文件元素](./H1_P_Div.html)
 
-## 具有語意的結構元素
+## 3. 具有語意的結構元素
 
 ![upgit_20250227_1740634591.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250227_1740634591.png)
 
@@ -68,11 +68,11 @@
 -   `<figcaption>`：為 `<figure>` 提供標題或描述。
 -   [Lab：具有語意的結構元素](./Layout_Example.html)
 
-## 區塊元素&行內元素
+## 4. 區塊元素&行內元素
 
 -   [Lab：展示 block 跟 inline](./Div_Span.html)
 
-### 區塊級元素 (Block-level)
+### 4.1. 區塊級元素 (Block-level)
 
 -   佔據整個父容器的寬度，自動換行顯示。
 -   常見標籤：`<div>`、`<p>`、`<h1>-<h6>`、`<ul>`、`<li>`。
@@ -81,7 +81,7 @@
     -   `margin`（外距） & `padding`（內距）
 -   可包含其他區塊級元素或行內元素。
 
-### 行內元素 (Inline-level)
+### 4.2. 行內元素 (Inline-level)
 
 -   僅佔內容所需的寬度，不換行。
 -   常見標籤：`<span>`、`<a>`、`<strong>`、`<em>`。
@@ -89,7 +89,7 @@
     -   無法設定 `width` & `height`
     -   只能包含其他行內元素，不能包含區塊級元素。
 
-### 其他小標籤
+### 4.3. 其他小標籤
 
 -   `<hr>`：插入 水平線，用於區隔內容。
 -   `<br>`：插入 換行，適用於段內換行需求。
@@ -97,7 +97,7 @@
 -   `<blockquote>`：標示 長段落引用，用於引用文章或文獻。
 -   [Lab：示範其他文字格式標籤](./Display_Block.html)
 
-## 項目編號
+## 5. 項目編號
 
 -   無序列表 `<ul>`：用於顯示無順序的項目，通常以符號（如圓點）標示。
 -   有序列表 `<ol>`：用於顯示有順序的項目，可設定編號類型。
@@ -110,7 +110,7 @@
         -   `i`：小寫羅馬數字
 -   [Lab：示範項目編號](./List_Elements.html)
 
-## 超連結 (Hyperlink)
+## 6. 超連結 (Hyperlink)
 
 -   透過 `<a>` 標籤實現超連結
 -   相關屬性
@@ -120,12 +120,12 @@
     -   `_blank`：在新分頁開啟
 -   `download`：設定為下載連結（用於檔案下載）
 
-### 頁內跳轉
+### 6.1. 頁內跳轉
 
 -   透過 `<a href="#id">` 搭配 `<div id="id">` 來實現頁內跳轉
 -   [Lab：頁內跳轉](./A_Tag.html)
 
-### 設定頁面基準：`<base />`
+### 6.2. 設定頁面基準：`<base />`
 
 -   設定頁面所有超連結的基準 URL
 -   可用於管理專案內的相對路徑
@@ -133,16 +133,16 @@
 -   `target`：設定所有超連結的預設開啟方式
 -   [Lab：設定基準](./A_Base/index.html)
 
-## [嵌入圖片、影片、影音](./Img_Vedio.html)
+## 7. [嵌入圖片、影片、影音](./Img_Vedio.html)
 
-### 圖片 `<img>` 標籤
+### 7.1. 圖片 `<img>` 標籤
 
 -   `src="url"`：設定圖片來源
 -   `width="n"`：圖片寬度
 -   `height="n"`：圖片高度
 -   `alt="文字"`：圖片無法顯示時的替代文字
 
-### 影片 `<video>` 標籤
+### 7.2. 影片 `<video>` 標籤
 
 -   `src="url"`：設定影片來源
 -   `width="n"` / `height="n"`：影片尺寸
@@ -151,7 +151,7 @@
 -   `loop`：循環播放
 -   `muted`：靜音播放
 
-### 音訊 `<audio>` 標籤
+### 7.3. 音訊 `<audio>` 標籤
 
 -   `src="url"`：設定音訊來源
 -   `controls`：顯示播放控制按鈕
@@ -159,7 +159,7 @@
 -   `loop`：循環播放
 -   `muted`：靜音播放
 
-### 浮動框架
+### 7.4. 浮動框架
 
 -   嵌入 YT 影片
 -   嵌入 google map
@@ -168,12 +168,12 @@
 
 ![upgit_20250309_1741529406.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250309_1741529406.png)
 
-## Table
+## 8. Table
 
 -   [基本表格](./Tabel01.html)
 -   [使用 thead、tbody 的表格](./Tabel02.html)
 
-## 表單
+## 9. 表單
 
 -   [表單實作](./Form.html)
 
@@ -183,7 +183,7 @@
     -   填寫檔案上傳
     -   傳送數據到資料庫
 
-### `<form>` 元素屬性
+### 9.1. `<form>` 元素屬性
 
 -   name：表單名稱，可用於 JavaScript 操作特定表單。
 -   action：指定表單提交的目標網址（伺服器端的 API 或檔案）。
@@ -199,7 +199,7 @@
     -   `on`（啟用，預設值）
     -   `off`（關閉）
 
-### `<input>` 元素屬性
+### 9.2. `<input>` 元素屬性
 
 -   accept：指定 `<input type="file">` 可接受的檔案類型，例如：
 
@@ -228,7 +228,7 @@
 -   placeholder：設定輸入框內的提示文字，例如 `placeholder="請輸入您的電子郵件"`。
 -   required：設定該欄位為必填，若未填寫則無法提交表單。
 
-### HTML 表單中的 `type` 屬性--HTML 4.01
+### 9.3. HTML 表單中的 `type` 屬性--HTML 4.01
 
 | `type` 值  | 功能                   |
 | ---------- | ---------------------- |
@@ -241,7 +241,7 @@
 | `file`     | 檔案上傳               |
 | `button`   | 普通按鈕               |
 
-### HTML 表單中的 `type` 屬性--HTML 5
+### 9.4. HTML 表單中的 `type` 屬性--HTML 5
 
 | `type` 值        | 功能            |
 | ---------------- | --------------- |

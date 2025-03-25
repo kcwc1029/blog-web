@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nodejs/Node.md",
+                "file": "Lecture04：HTML/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Node"
+              "title": "README"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "檔案瀏覽器"
@@ -137,10 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Nodejs/Node.md"
+                "file": "Lecture04：HTML/README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Node 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -162,6 +166,8 @@
   },
   "active": "2aa97e41f754d204",
   "lastOpenFiles": [
+    "Lecture05：CSS/README.md",
+    "Nodejs/Node.md",
     "Nodejs/~$Nodejs02.pptx",
     "Nodejs/sqlite_v01/node_modules/sqlite3/build/Release/node_sqlite3.node",
     "Nodejs/sqlite_v01/node_modules/sqlite3/src/threading.h",
@@ -172,7 +178,6 @@
     "Nodejs/sqlite_v01/node_modules/sqlite3/src/gcc-preinclude.h",
     "Nodejs/sqlite_v01/node_modules/sqlite3/src/database.h",
     "Nodejs/sqlite_v01/node_modules/sqlite3/src/database.cc",
-    "Nodejs/sqlite_v01/node_modules/sqlite3/src/backup.h",
     "Nodejs/sqlite_v01/node_modules/sqlite3/README.md",
     "Nodejs/sqlite_v01/node_modules/node-addon-api/tools/README.md",
     "Nodejs/sqlite_v01/node_modules/node-addon-api/README.md",
@@ -199,7 +204,6 @@
     "Nodejs/practice node/node_modules/prebuild-install/CHANGELOG.md",
     "Nodejs/practice node/node_modules/jsbn/README.md",
     "Nodejs/practice node/node_modules/jsbn/CHANGELOG.md",
-    "Nodejs/practice node/node_modules/isexe/README.md",
     "Nodejs/sequelize_v01/node_modules/unique-filename/coverage/sort-arrow-sprite.png",
     "Nodejs/sequelize_v01/node_modules/retry/equation.gif",
     "Nodejs/sequelize_v01/sqlite_v01/node_modules/retry/equation.gif",

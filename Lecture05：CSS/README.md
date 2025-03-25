@@ -1,15 +1,15 @@
-## 推薦
+## 1. 推薦
 
 -   https://www.oxxostudio.tw/index.html?tag-css
 
-## 基本介紹
+## 2. 基本介紹
 
 -   CSS（Cascading Style Sheets，層疊樣式表）用來控制網頁的外觀，包括排版、顯示格式、樣式及視覺效果，提升了 HTML 的設計靈活性與美觀。
 -   HTML 原本是設計來處理內容的結構化，對於美觀方面的控制有限。CSS 允許網頁開發者控制外觀，讓內容和呈現分離，這樣能提高維護的靈活度和效率。
 
-## 套用 CSS 的方式
+## 3. 套用 CSS 的方式
 
-### 內部樣式（Internal Style）
+### 3.1. 內部樣式（Internal Style）
 
 -   在 `<style>` 標籤內寫入 CSS
 
@@ -29,7 +29,7 @@
 </head>
 ```
 
-### 外部樣式（External Style）
+### 3.2. 外部樣式（External Style）
 
 -   將 CSS 另存為 .css 檔案，並使用 `<link>` 或 @import 引入
 
@@ -46,7 +46,7 @@
 </head>
 ```
 
-### 行內樣式（Inline Style）
+### 3.3. 行內樣式（Inline Style）
 
 -   直接在 HTML 標籤的 `style` 屬性內定義 CSS
 
@@ -56,7 +56,7 @@
 </body>
 ```
 
-## CSS 語法
+## 4. CSS 語法
 
 -   選擇器(selector)：用來設定要套用規則的對象，範例如`body`、`h1`等元素。
 -   宣告(declaration)：用來描述選擇器應套用的樣式。每個宣告包含屬性(property)和其值(value)，如`color: white`。
@@ -93,9 +93,9 @@
 </html>
 ```
 
-## 選擇器 (Selector)
+## 5. 選擇器 (Selector)
 
-### **通用選擇器 (Universal Selector)**
+### 5.1. **通用選擇器 (Universal Selector)**
 
 -   用來選擇 HTML 文件中所有元素，並套用相同規則。適用於初始化設定或全局樣式。
 
@@ -107,7 +107,7 @@
 }
 ```
 
-### **類型選擇器 (Type Selector)**
+### 5.2. **類型選擇器 (Type Selector)**
 
 -   針對指定的 HTML 元素類型，應用規則。
 
@@ -127,7 +127,7 @@ p {
 }
 ```
 
-### **類別選擇器 (Class Selector)**
+### 5.3. **類別選擇器 (Class Selector)**
 
 -   針對指定的 class 屬性套用規則，適用於多個元素。
 
@@ -146,7 +146,7 @@ p {
 }
 ```
 
-### **ID 選擇器 (ID Selector)**
+### 5.4. **ID 選擇器 (ID Selector)**
 
 -   針對指定的 ID 屬性套用規則，ID 在文件中必須唯一。
 
@@ -157,7 +157,7 @@ p {
 }
 ```
 
-## 虛擬元素(pseudo-element)
+## 6. 虛擬元素(pseudo-element)
 
 ![01.gif](./CSS%20GIF/01.gif)
 
@@ -171,7 +171,7 @@ p {
     -   `::selection`：用來選擇使用者選取的文字部分。
 -   實作：[Pseudo_Element.html](./Pseudo_Element.html)
 
-## 虛擬類別 (Pseudo-class)
+## 7. 虛擬類別 (Pseudo-class)
 
 ![02.gif](./CSS%20GIF/02.gif)
 
@@ -182,27 +182,27 @@ p {
 
 -   實作：[Pseudo_Class.html](./Pseudo_Class.html)
 
-## !important
+## 8. !important
 
 -   !important 是 CSS 中用來強制提高樣式優先級的一種方式。
 -   當某個樣式屬性加上 !important 時，無論其他樣式的優先級如何，該屬性都會被強制應用。
 -   在 CSS 屬性值後面加上 !important。例如：color: red !important;。
 -   實作：[important.html](./important.html)
 
-## 色彩屬性
+## 9. 色彩屬性
 
 -   color：前景色彩(可以視為字型顏色)
 -   background-color：背景色彩
 -   opacity: 0.5：設定透明度。
 -   實作：[Color.html](./Color.html)
 
-## 尺寸單位
+## 10. 尺寸單位
 
-### 絕對單位
+### 10.1. 絕對單位
 
 -   px：用來定義元素的尺寸（如字體、邊距、間距等），確保精確的尺寸控制。
 
-### 相對單位
+### 10.2. 相對單位
 
 -   em：常用於字體大小和間距的相對設定。`em` 是相對於父元素字體大小的倍數。用這個單位可以讓頁面更具彈性，適應不同的屏幕大小。
 -   rem：與 `em` 類似，但 `rem` 是相對於根元素（`<html>` 標籤）的字體大小。這個單位越來越常用，因為它提供了更一致的設計控制。
@@ -210,7 +210,7 @@ p {
 -   %(百分比)：適合用來設定寬度（`width`）、高度（`height`）等，以便隨著父元素或視窗的大小自動調整。它的靈活性高，但有時候可能會導致元素尺寸不夠精確。
 -   相關閱讀：https://ithelp.ithome.com.tw/articles/10289914?sc=iThelpR
 
-## 字形屬性(font)
+## 11. 字形屬性(font)
 
 -   用於控制文字的外觀，包括字型、大小、樣式、粗細和行高等。
 -   font-family：設定字型。
@@ -228,7 +228,7 @@ p {
 -   line-height：設定行高
 -   實作：[Font.html](./Font.html)
 
-## 文字屬性(font)
+## 12. 文字屬性(font)
 
 -   **text-indent**：
     -   控制段落首行縮進。
@@ -251,7 +251,7 @@ p {
         -   `text-decoration-color`：指定裝飾線顏色（如 `blue`、`red`）。
 -   實作：[Text.html](./Text.html)
 
-## 清單屬性
+## 13. 清單屬性
 
 -   **清單**：使用 `<ul>`（無序）或 `<ol>`（有序）標籤展示項目，內含 `<li>`。
 -   **CSS 屬性**：`list-style-type` 設定標記樣式。
@@ -271,7 +271,7 @@ p {
     -   `lower-greek`：小寫希臘字母（α, β, γ）。
 -   實作：[List_Style.html](./List_Style.html)
 
-## Box Model
+## 14. Box Model
 
 ![upgit_20250315_1742027861.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250315_1742027861.png)
 
@@ -285,16 +285,16 @@ p {
     -   當兩個垂直相鄰的元素的外邊距接觸時，它們的外邊距會合併為一個較大的外邊距。
     -   取兩個外邊距中的較大值作為最終的外邊距。
 
-## 寬度與高度屬性
+## 15. 寬度與高度屬性
 
-### box-sizing 屬性
+### 15.1. box-sizing 屬性
 
 -   決定元素的 width 和 height 是否包含 padding 和 border
 -   預設為 `content-box`（width 和 height 只包含內容本身，padding 和 border 會額外增加元素的總寬度和高度）
 -   `box-sizing: border-box`：（width 和 height 包含 padding 和 border，padding 和 border 不會額外增加元素的總寬度和高度）
 -   文章：https://ithelp.ithome.com.tw/articles/10252827
 
-### overflow
+### 15.2. overflow
 
 -   控制元素內容超出容器邊界時的顯示方式：
 
@@ -304,20 +304,20 @@ p {
 -   `auto`：當內容超出時，自動顯示滾動條
 -   實作：[Overflow.html](./Overflow.html)
 
-## 定位方式--position
+## 16. 定位方式--position
 
 -   用於控制元素的定位方式
 -   可以讓元素脫離正常文檔流，並根據指定的位置進行布局
 -   實作：[position.html](./position.html)
 
-### 0.2. static（預設值）
+### 16.1. static（預設值）
 
 -   元素按照正常文檔流排列，無法使用 top、bottom、left、right 進行定位。
     ![upgit_20250316_1742111574.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742111574.png)
 
 ![upgit_20250316_1742111580.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742111580.png)
 
-### 0.3. relative
+### 16.2. relative
 
 -   元素相對於其正常位置進行偏移。
 -   可以使用 top、bottom、left、right 進行定位。
@@ -325,7 +325,7 @@ p {
 
 ![upgit_20250316_1742111621.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742111621.png)
 
-### 0.4. absolute
+### 16.3. absolute
 
 -   元素相對最近的非 static 父元素進行定位。
 -   可以使用 top、bottom、left、right 進行定位。
@@ -334,7 +334,7 @@ p {
 
 ![upgit_20250316_1742111643.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742111643.png)
 
-### 0.5. fixed
+### 16.4. fixed
 
 -   元素相對於瀏覽器視口進行定位。
 -   即使頁面滾動，元素也會固定在指定位置。
@@ -343,7 +343,7 @@ p {
 
 ![Position_Fixed.gif](./CSS%20GIF/Position_Fixed.gif)
 
-### 0.6. sticky
+### 16.5. sticky
 
 -   元素根據滾動位置在 relative 和 fixed 之間切換。
 -   當元素滾動到指定位置時，會固定在該位置。
@@ -352,7 +352,7 @@ p {
 
 ![Position_sticky.gif](./CSS%20GIF/Position_sticky.gif)
 
-## 文繞圖--float
+## 17. 文繞圖--float
 
 -   flaot：{none, left, right}。
 -   我們可以使用 float 屬性將一個正常順序中的元素放在容器的左側或右側，而容器裡面的其它元素會環繞在該元素周圍。
@@ -364,7 +364,7 @@ p {
 
 ![upgit_20250316_1742112503.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742112503.png)
 
-## 可見--visibility
+## 18. 可見--visibility
 
 -   設定要顯示/隱藏 box(但空間還是回存在)。
 
@@ -373,7 +373,7 @@ p {
 -   標題一設定為 hidden，所以不回顯示，但空間仍表留
 -   標題二設定為 display:none，所以整個空間直接消失
 
-## 陰影(box-shadow)
+## 19. 陰影(box-shadow)
 
 -   用於為元素添加陰影效果。
 -   可以控制陰影的水平位移、垂直位移、模糊半徑、擴散距離和顏色。
@@ -385,7 +385,7 @@ p {
     -   色彩：陰影的顏色（例如 #000000 或 rgba(0, 0, 0, 0.5)）。
 -   實作：[Box_Shadow.html](./Box_Shadow.html)
 
-## 背景屬性
+## 20. 背景屬性
 
 -   background-image: url("圖片路徑")：設定元素的背景圖片
 -   background-repeat：設定背景圖片的排列方式。
@@ -402,7 +402,7 @@ p {
     -   local：背景圖片隨元素內容和容器內容捲動。
 -   實作：[Background.html](./Background.html)
 
-## 漸層屬性
+## 21. 漸層屬性
 
 -   linear-gradient：{角度|方向、色彩停止點}：線性漸層。
 -   radial-gradient：{形狀|大小|位置、色彩停止點 1、色彩停止點 2...}：放射漸層。
@@ -416,7 +416,7 @@ p {
 
 ![upgit_20250316_1742113452.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742113452.png)
 
-## 濾鏡屬性
+## 22. 濾鏡屬性
 
 -   blur(x)：模糊效果，參數 `x` 指定模糊半徑，常用於製造圖片模糊背景或柔化效果。
 -   brightness(x)：參數 `x` 的值大於 100% 提高亮度，小於 100% 降低亮度。
@@ -431,7 +431,7 @@ p {
 
 ![upgit_20250316_1742113628.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742113628.png)
 
-## 表格屬性
+## 23. 表格屬性
 
 -   參考：https://medium.com/%E8%B2%93%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E6%97%A5%E5%B8%B8/%E7%94%A8css-table%E5%81%9A%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E8%A1%A8%E6%A0%BC-7ec639942fea
 -   caption-side：設定表格標題的位置，可設定 top、bottom
@@ -442,7 +442,7 @@ p {
     -   auto：儲存格寬度根據內容自動調整。
     -   fixed：儲存格寬度根據表格寬度和欄寬固定。
 
-## 1. flexbox
+## 24. flexbox
 
 ![upgit_20250316_1742114449.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742114449.png)
 
@@ -453,13 +453,13 @@ p {
     -   水平尺寸與垂直尺寸 ( main size、cross size )
 -   Flexbox 屬性如下：display、flex-direction、justify-content、align-items、align-self、align-content、flex-wrap、order、flex
 
-### 1.1. Display
+### 24.1. Display
 
 -   展示方式，預設為 flex
 
 ![upgit_20250316_1742114808.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742114808.png)
 
-### 1.2. flex-direction
+### 24.2. flex-direction
 
 -   表示 Flexbox 內容元素的排列方向。
 -   row：預設值，由左到右，從上到下
@@ -469,7 +469,7 @@ p {
 
 ![upgit_20250316_1742114893.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742114893.png)
 
-### 1.3. justify-content：
+### 24.3. justify-content：
 
 -   設定 Flex Item 在主軸上的對齊方式
 -   flex-start：靠左對齊（預設值）。
@@ -480,7 +480,7 @@ p {
 
 ![upgit_20250316_1742115174.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742115174.png)
 
-### 1.4. align-items：
+### 24.4. align-items：
 
 -   設定 Flex Item 在副軸上的對齊方式。
 -   flex-start：靠上對齊。
@@ -491,7 +491,7 @@ p {
 
 ![upgit_20250316_1742115230.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742115230.png)
 
-### 1.5. flex-wrap：
+### 24.5. flex-wrap：
 
 -   設定 Flex Item 是否換行。
 -   nowrap：不換行（預設值）。
@@ -499,7 +499,7 @@ p {
 
 ![upgit_20250316_1742115297.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/03/upgit_20250316_1742115297.png)
 
-### 1.6. flex
+### 24.6. flex
 
 -   由三個屬性組合而成，分別為「flex-grow」、「flex-shrink」和「flex-basis」
 -   flex-grow：設定 Flex Item 的放大比例
@@ -513,11 +513,11 @@ p {
 
 ![Flexbox_Flex.gif](./CSS%20GIF/Flexbox_Flex.gif)
 
-## Grid
+## 25. Grid
 
 -   https://css-tricks.com/snippets/css/complete-guide-grid/#prop-display
 
-## 媒體查詢
+## 26. 媒體查詢
 
 -   要先了解 RWD(這個老師上課應該會講 XD)
 -   媒體查詢是 CSS 中用來根據設備特性（例如螢幕寬度、設備類型等）應用不同樣式的技術。
@@ -532,7 +532,7 @@ p {
     -   min-width：最小寬度。
     -   max-width：最大寬度。
 
-### 媒體查詢的使用方式
+### 26.1. 媒體查詢的使用方式
 
 -   `<link>`元素中使用：根據媒體類型加載不同的 CSS 文件。
 
