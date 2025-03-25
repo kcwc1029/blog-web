@@ -15,7 +15,6 @@ TA 寫得很辛苦，能不能幫忙點個右上角的 ⭐ 支持一下(霸脫 Q
 -   Lecture02：🟩 Figma
 -   Lecture03：🟩 Figma
 -   Lecture04：🟩 HTML
-    -   影片：https://youtu.be/avxg-6JFl8o
 -   Lecture05：🟩 CSS
 -   Lecture06：🟩 Bootstrap
 -   Lecture07：🟩 Javascritp01
