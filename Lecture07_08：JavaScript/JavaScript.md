@@ -52,7 +52,7 @@
 
 ```js
 if (true) {
-	var x = 10;
+    var x = 10;
 }
 console.log(x); // ✅ 可以輸出 10
 ```
@@ -64,7 +64,7 @@ console.log(x); // ✅ 可以輸出 10
 
 ```js
 if (true) {
-	let y = 20;
+    let y = 20;
 }
 console.log(y); // ❌ ReferenceError
 ```
@@ -84,7 +84,7 @@ obj.name = "Jerry"; // ✅ 可以修改屬性
 
 ```js
 function sayHi(name) {
-	console.log("Hi, " + name);
+    console.log("Hi, " + name);
 }
 sayHi("Amy");
 ```
@@ -94,7 +94,7 @@ sayHi("Amy");
 
 ```js
 function add(a, b) {
-	return a + b;
+    return a + b;
 }
 console.log(add(2, 3)); // 5
 ```
@@ -102,7 +102,7 @@ console.log(add(2, 3)); // 5
 ```js
 // 沒有寫 return
 function sayHello(name) {
-	console.log("Hello, " + name + "!");
+    console.log("Hello, " + name + "!");
 }
 
 let result = sayHello("Amy");
@@ -117,12 +117,12 @@ console.log(result); // 輸出什麼？
 
 ```js
 function createCounter() {
-	let count = 0;
+    let count = 0;
 
-	return function () {
-		count++;
-		console.log(count);
-	};
+    return function () {
+        count++;
+        console.log(count);
+    };
 }
 
 const counter01 = createCounter();
@@ -141,11 +141,11 @@ counter02(); // 2
 
 ```js
 function add(a) {
-	return function (b) {
-		return function (c) {
-			return a + b + c;
-		};
-	};
+    return function (b) {
+        return function (c) {
+            return a + b + c;
+        };
+    };
 }
 
 console.log(add(2)(3)(4)); // 9
@@ -159,8 +159,8 @@ console.log(add(2)(3)(4)); // 9
 var myArray = ["Yuri", "Zoe"];
 
 const getResult = (function () {
-	var myArray = [1, 2, 3, 4, 5, 6, 7];
-	return myArray.join("");
+    var myArray = [1, 2, 3, 4, 5, 6, 7];
+    return myArray.join("");
 })();
 
 console.log(getResult); // "1234567"
@@ -206,18 +206,18 @@ JavaScript 中的三種物件模型
 ```js
 // 定義 Car 類別
 class Car {
-	constructor(brand, speed) {
-		this.brand = brand; // 屬性
-		this.speed = speed; // 屬性
-	}
+    constructor(brand, speed) {
+        this.brand = brand; // 屬性
+        this.speed = speed; // 屬性
+    }
 
-	startCar() {
-		console.log(this.brand + " 車子啟動"); // 方法
-	}
+    startCar() {
+        console.log(this.brand + " 車子啟動"); // 方法
+    }
 
-	changeSpeed(newSpeed) {
-		this.speed = newSpeed; // 方法
-	}
+    changeSpeed(newSpeed) {
+        this.speed = newSpeed; // 方法
+    }
 }
 
 // 建立物件實例
@@ -241,11 +241,11 @@ console.log(myCar.speed); // 輸出：100
 ```js
 // 建立物件
 let user = {
-	name: "TA",
-	age: 24,
-	showMsg: function () {
-		window.alert("Hi, 我是 " + this.name + "!");
-	},
+    name: "TA",
+    age: 24,
+    showMsg: function () {
+        window.alert("Hi, 我是 " + this.name + "!");
+    },
 };
 
 // 操作物件
@@ -265,7 +265,7 @@ let user = new Object();
 user.name = "TA";
 user.age = 23;
 user.showMsg = function () {
-	window.alert("Hi, 我是 " + this.name + "!");
+    window.alert("Hi, 我是 " + this.name + "!");
 };
 
 // 呼叫方法
@@ -291,20 +291,20 @@ JS 語法重點：
 
 ```javascript
 class User {
-	#password; // 私有屬性
+    #password; // 私有屬性
 
-	constructor(name, password) {
-		this.name = name;
-		this.#password = password;
-	}
+    constructor(name, password) {
+        this.name = name;
+        this.#password = password;
+    }
 
-	get password() {
-		return "密碼是隱藏的！";
-	}
+    get password() {
+        return "密碼是隱藏的！";
+    }
 
-	set password(newPassword) {
-		this.#password = newPassword;
-	}
+    set password(newPassword) {
+        this.#password = newPassword;
+    }
 }
 
 let user = new User("TA", "12345");
@@ -322,24 +322,24 @@ JS 語法重點：
 
 ```javascript
 class Vehicle {
-	constructor(brand) {
-		this.brand = brand;
-	}
+    constructor(brand) {
+        this.brand = brand;
+    }
 
-	start() {
-		console.log(this.brand + " 啟動！");
-	}
+    start() {
+        console.log(this.brand + " 啟動！");
+    }
 }
 
 class Car extends Vehicle {
-	constructor(brand, model) {
-		super(brand); // 呼叫父類別建構子
-		this.model = model;
-	}
+    constructor(brand, model) {
+        super(brand); // 呼叫父類別建構子
+        this.model = model;
+    }
 
-	drive() {
-		console.log(this.brand + " " + this.model + " 正在行駛！");
-	}
+    drive() {
+        console.log(this.brand + " " + this.model + " 正在行駛！");
+    }
 }
 
 let myCar = new Car("Toyota", "Corolla");
@@ -354,21 +354,21 @@ JS 語法重點：使用繼承與**方法覆寫（Override）**實現
 
 ```javascript
 class Animal {
-	speak() {
-		console.log("動物發出聲音！");
-	}
+    speak() {
+        console.log("動物發出聲音！");
+    }
 }
 
 class Dog extends Animal {
-	speak() {
-		console.log("狗叫：汪汪！");
-	}
+    speak() {
+        console.log("狗叫：汪汪！");
+    }
 }
 
 class Cat extends Animal {
-	speak() {
-		console.log("貓叫：喵喵！");
-	}
+    speak() {
+        console.log("貓叫：喵喵！");
+    }
 }
 
 let animals = [new Dog(), new Cat(), new Animal()];
@@ -387,21 +387,21 @@ JS 實作方式：JavaScript 沒有內建 abstract 類別，但可以透過「�
 
 ```javascript
 class Shape {
-	// 抽象方法：僅定義，不實作
-	getArea() {
-		throw new Error("子類必須實現 getArea 方法！");
-	}
+    // 抽象方法：僅定義，不實作
+    getArea() {
+        throw new Error("子類必須實現 getArea 方法！");
+    }
 }
 
 class Circle extends Shape {
-	constructor(radius) {
-		super();
-		this.radius = radius;
-	}
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
 
-	getArea() {
-		return Math.PI * this.radius ** 2;
-	}
+    getArea() {
+        return Math.PI * this.radius ** 2;
+    }
 }
 
 let myCircle = new Circle(5);
@@ -443,11 +443,11 @@ JS 提供 try...catch...finally 來捕捉與處理錯誤，確保程式不會因
 
 ```js
 try {
-	// 可能會出錯的程式碼
+    // 可能會出錯的程式碼
 } catch (error) {
-	// 錯誤處理區塊
+    // 錯誤處理區塊
 } finally {
-	// 無論是否出錯，最後都會執行
+    // 無論是否出錯，最後都會執行
 }
 ```
 
@@ -456,21 +456,266 @@ try {
 ```js
 // 範例：分母不能為 0
 function divide(a, b) {
-	try {
-		if (b === 0) throw new Error("分母不能為 0");
-		return a / b;
-	} catch (error) {
-		console.error("錯誤：" + error.message);
-		return null;
-	}
+    try {
+        if (b === 0) throw new Error("分母不能為 0");
+        return a / b;
+    } catch (error) {
+        console.error("錯誤：" + error.message);
+        return null;
+    }
 }
 
 console.log(divide(10, 0)); // 錯誤：分母不能為 0
 console.log(divide(10, 2)); // 5
 ```
 
-```js
+## Error 物件
 
+Error 物件常用屬性
+
+-   message： 錯誤的簡短描述。
+-   name： 錯誤名稱（如 `TypeError`、`ReferenceError`）。
+-   stack： 錯誤的堆疊資訊（詳細的錯誤呼叫鏈路）。
+
+```js
+try {
+    let arr = null;
+    arr.push(1); // 這裡會拋出錯誤，因為 null 沒有 push 方法
+} catch (error) {
+    console.log("錯誤名稱：" + error.name); // TypeError
+    console.log("錯誤訊息：" + error.message); // Cannot read properties of null (reading 'push')
+    console.log("錯誤堆疊：" + error.stack); // 詳細錯誤堆疊資訊
+}
+```
+
+## Prototype
+
+每個 JavaScript 物件都有一個內建的 `[[Prototype]]` 屬性，指向另一個物件，這個物件就是它的「原型」。
+原型提供屬性與方法的「繼承」來源，這稱為 Prototype Inheritance（原型繼承）。
+好處是：節省記憶體、提升重複使用性。
+
+### 建構函式（Constructor Function）與 Prototype
+
+建構函式：是一種特殊的函式，用於建立多個類似的物件。
+
+```js
+function Person(attributes) {
+    this.name = attributes.name;
+    this.age = attributes.age;
+}
+
+const ta = new Person({ name: "TA", age: 23 });
+```
+
+### 添加 Prototype 方法
+
+所有由 Person 建構的物件都可以共用這個方法：
+
+```js
+Person.prototype.introduce = function () {
+    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+};
+ta.introduce(); // Hi, I'm TA and I'm 23 years old.
+```
+
+### 擴展 Prototype 屬性與方法
+
+```js
+// 新增屬性
+Person.prototype.legalAge = 18;
+
+// 新增方法
+Person.prototype.commuteWay = function () {
+    return this.age > this.legalAge ? "開車" : "走路";
+};
+
+const yuri = new Person({ name: "Yuri", age: 23 });
+console.log(yuri.commuteWay()); // 開車
+```
+
+### 原型鏈（Prototype Chain）
+
+當你存取一個物件的屬性或方法時，JavaScript 會沿著原型鏈向上查找，直到找到或到 null 為止。
+
+```js
+const baseProto = {
+    species: "Human",
+    sayHello: function () {
+        console.log(`Hello, I'm a ${this.species}`);
+    },
+};
+
+const personProto = Object.create(baseProto);
+personProto.name = "Alice";
+personProto.introduce = function () {
+    console.log(`Hi, my name is ${this.name}`);
+};
+
+const student = Object.create(personProto);
+student.grade = "A";
+student.study = function () {
+    console.log(`${this.name} is studying.`);
+};
+
+// 呼叫原型鏈上的方法與屬性
+student.name = "Bob";
+student.introduce(); // Hi, my name is Bob
+student.sayHello(); // Hello, I'm a Human
+student.study(); // Bob is studying.
+console.log(student.grade); // A
+```
+
+## 1. this
+
+`this` 是 JavaScript 執行期間，根據函式呼叫方式決定的「物件參考」。
+
+-   `this` 不是變數名，也不是靜態的，它是「執行當下」由 JavaScript 自動指派的物件參考。
+
+執行環境的生命週期：可以分為兩階段
+
+-   創造階段 (Creation Phase)：
+    -   分配記憶體空間給變數和函式。
+    -   進行變數提升 (Hoisting)。
+    -   建立執行環境所需的資料結構。
+    -   將函式放入呼叫堆疊 (Call Stack)，等待執行。
+-   執行階段 (Execution Phase)：
+    -   逐行執行程式碼。
+    -   透過 `this` 和作用域鏈，存取所需的變數和函式。
+    -   當函式執行完成或遇到 `return`，從堆疊中移除執行環境。
+
+執行環境的生命範圍：也可以分為兩階段
+
+-   **Global Execution Context（全域）**：
+    -   當 JavaScript 開始執行時，會自動產生。
+    -   此時的 `this` 指向全域物件（在瀏覽器是 `window`，Node.js 是 `global`）。
+-   **Function Execution Context（區域）**：
+    -   每當函式被呼叫，會建立一個新的執行環境。
+    -   在這裡，`this` 的指向會根據呼叫方式而有所不同。
+
+## 2. `this` 的四種綁定規則
+
+| 綁定類型         | 說明                                            | 範例            |
+| ---------------- | ----------------------------------------------- | --------------- |
+| Default Binding  | 獨立呼叫函式時 → `this` = global                | `foo()`         |
+| Implicit Binding | 被物件呼叫 → `this` = 呼叫該函式的物件          | `obj.foo()`     |
+| Explicit Binding | 用 `.call()`、`.apply()`、`.bind()` 指定 `this` | `foo.call(obj)` |
+| Arrow Function   | 箭頭函式的 `this` 是**定義時外層**的 `this`     | `() => this`    |
+
+### 2.1. Default Binding（預設綁定）
+
+說明：此函式不是屬於任何物件，因此 `this` 預設指向全域物件。
+
+```js
+function show() {
+    console.log(this); // window (in browser)
+}
+show();
+```
+
+### 2.2. Implicit Binding（隱式綁定）
+
+```js
+const obj = {
+    name: "物件",
+    show() {
+        console.log(this.name); // '物件'
+    },
+};
+obj.show();
+```
+
+說明：函式是物件的方法，由物件呼叫 → `this` 指向該物件。
+
+#### 2.2.1. 3️⃣ Explicit Binding（顯式綁定）
+
+```js
+function sayHello() {
+    console.log(this.name);
+}
+const user = { name: "Alice" };
+sayHello.call(user); // 'Alice'
+```
+
+說明：使用 `.call()` 明確指定 `this` 為 `user`，即使原本不是物件方法。
+
+#### 2.2.2. 4️⃣ Arrow Function（箭頭函式）
+
+```js
+const obj = {
+    name: "test",
+    arrow: () => {
+        console.log(this.name); // undefined
+    },
+};
+obj.arrow();
+```
+
+說明：箭頭函式不會自行綁定 `this`，而是繼承定義時外層的 `this`。
+
+---
+
+### 2.3. 五、常見錯誤與修正
+
+#### 2.3.1. 🔥 錯誤：事件處理中 this 是 window？
+
+```js
+const btn = {
+    label: "Click Me",
+    handleClick() {
+        console.log(this.label);
+    },
+};
+document.querySelector("#btn").addEventListener("click", btn.handleClick); // this 是 window！
+```
+
+✅ 修正：使用 `bind`
+
+```js
+document.querySelector("#btn").addEventListener("click", btn.handleClick.bind(btn));
+```
+
+說明：事件處理器內的函式呼叫方式變了，變成由 DOM 元素觸發，因此 `this` 不再指向原本的物件。
+
+---
+
+### 2.4. 六、小測驗：你能判斷 `this` 嗎？
+
+（請問以下各段程式中，`this` 指向誰？）
+
+1.
+
+```js
+function test() {
+    console.log(this);
+}
+test();
+// → window (或 global)
+```
+
+2.
+
+```js
+const car = {
+    brand: "Toyota",
+    showBrand() {
+        console.log(this.brand);
+    },
+};
+car.showBrand();
+// → 'Toyota'
+```
+
+3.
+
+```js
+const bike = {
+    brand: "Giant",
+    show: () => {
+        console.log(this.brand);
+    },
+};
+bike.show();
+// → undefined（this 不是 bike）
 ```
 
 ```js
