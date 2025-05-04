@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture07_08：JavaScript/JavaScript.md",
+                "file": "Lecture10：Tensorflow.js/Tensorflow.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JavaScript"
+              "title": "Tensorflow"
             }
           }
         ]
@@ -168,6 +168,8 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "56390c3cb868eea5",
-  "lastOpenFiles": []
+  "active": "bcccea3288cd5507",
+  "lastOpenFiles": [
+    "Lecture07_08：JavaScript/JavaScript.md"
+  ]
 }
