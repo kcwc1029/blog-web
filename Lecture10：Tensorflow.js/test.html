@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>xor_logic_prediction</title>
+		<!-- 引入 TensorFlow.js 和 TensorFlow.js Vis 庫 -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+	</head>
+	<body>
+		<h3>XOR 測試資料與預測輸出</h3>
+		<p>(訓練中請稍候，訓練完成後會顯示最終預測結果)</p>
+		<hr />
+		<!-- 測試資料與預測結果 -->
+		<div><strong>測試資料 (1):</strong> [0, 0] ➔ 預測輸出：<span id="output1">待預測...</span></div>
+		<div><strong>測試資料 (2):</strong> [0, 1] ➔ 預測輸出：<span id="output2">待預測...</span></div>
+		<div><strong>測試資料 (3):</strong> [1, 0] ➔ 預測輸出：<span id="output3">待預測...</span></div>
+		<div><strong>測試資料 (4):</strong> [1, 1] ➔ 預測輸出：<span id="output4">待預測...</span></div>
+
+		<script>
+			// 1️⃣ 準備 XOR 的訓練資料
+			const xs = tf.tensor2d([
+				[0, 0],
+				[0, 1],
+				[1, 0],
+				[1, 1],
+			]);
+			const ys = tf.tensor2d([[0], [1], [1], [0]]);
+
+			// 2️⃣ 建立模型
+			function createModel() {
+				const model = tf.sequential();
+				// 隱藏層：8 個神經元, activation: tanh
+				model.add(tf.layers.dense({ units: 8, inputShape: [2], activation: "tanh" }));
+				// 輸出層：1 個神經元, activation: sigmoid
+				model.add(tf.layers.dense({ units: 1, activation: "sigmoid" }));
+				// 編譯模型：optimizer & loss
+				model.compile({
+					optimizer: "sgd",
+					loss: "binaryCrossentropy",
+					metrics: ["accuracy"],
+				});
+				// 顯示模型摘要
+				tfvis.show.modelSummary({ name: "Model Summary" }, model);
+				return model;
+			}
+
+			// 3️⃣ 執行訓練
+			async function trainModel() {
+				const model = createModel();
+				await model.fit(xs, ys, {
+					batchSize: 1,
+					epochs: 3000,
+					callbacks: tfvis.show.fitCallbacks({ name: "Training Performance" }, ["loss", "acc"], { height: 200, callbacks: ["onEpochEnd"] }),
+				});
+
+				// 訓練完成後 ➔ 進行預測
+				const preds = model.predict(xs);
+				const predValues = await preds.array();
+				// 顯示結果
+				document.getElementById("output1").innerText = predValues[0][0].toFixed(4);
+				document.getElementById("output2").innerText = predValues[1][0].toFixed(4);
+				document.getElementById("output3").innerText = predValues[2][0].toFixed(4);
+				document.getElementById("output4").innerText = predValues[3][0].toFixed(4);
+			}
+
+			// 執行！
+			trainModel();
+		</script>
+	</body>
+</html>

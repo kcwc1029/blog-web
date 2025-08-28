@@ -94,8 +94,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture07_08：JavaScript/JavaScript.md",
-                "collapseAll": false,
+                "file": "Lecture10：Tensorflow.js/Tensorflow.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "JavaScript 的反向連結"
+              "title": "Tensorflow 的反向連結"
             }
           },
           {
@@ -142,21 +142,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture07_08：JavaScript/JavaScript.md",
+                "file": "Lecture10：Tensorflow.js/Tensorflow.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "JavaScript 的大綱"
+              "title": "Tensorflow 的大綱"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,6 +170,7 @@
   },
   "active": "bcccea3288cd5507",
   "lastOpenFiles": [
+    "Lecture10：Tensorflow.js/pptF3F5.tmp",
     "Lecture07_08：JavaScript/JavaScript.md"
   ]
 }
